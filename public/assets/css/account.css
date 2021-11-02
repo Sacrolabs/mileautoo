@@ -1,0 +1,850 @@
+
+/* ############################# */
+/*              Reset            */
+/* ############################# */
+* {
+    box-sizing: border-box;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+h1, h2, p, ul {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+img {
+    display: block;
+}
+
+
+/* ############################# */
+/*              Main             */
+/* ############################# */
+:root {
+    --color-text: #131313;
+    --color-text-light: #7B7B7B;
+    --color-cta: #009966;
+
+    --font-main: 'Open Sans', sans-serif;
+    --font-secondary: 'Lato', sans-serif;
+}
+body {
+    font-family: var(--font-main);
+    font-size: 16px;
+    color: var(--color-text);
+}
+section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+section.fill-place {
+    min-height: calc(100vh - 404px);
+}
+section .wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1107px;
+    margin: 0 15px;
+}
+.account-hero {
+    position: absolute;
+    top: 90px;
+    z-index: -1;
+    height: 560px;
+    width: 100%;
+}
+.hidden {
+    display: none!important;
+}
+input[type="date"]:before {
+    content: attr(placeholder);
+    color: var(--color-text-light);
+    margin-right: 0.5em;
+    position: absolute;
+}
+input[type="date"]:focus:before,
+input[type="date"]:valid:before {
+    content: "";
+}
+.input-error,
+.input-error::placeholder {
+    border-color: #FF0000 !important;
+    color: #FF0000 !important;
+}
+.predefined {
+    pointer-events: none !important;
+    background-color: #eaeaea !important;
+}
+
+
+
+/* ############################# */
+/*              Nav              */
+/* ############################# */
+header {
+    font-family: var(--font-secondary);
+    height: 90px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);
+    display: flex;
+    justify-content: center;
+}
+header nav {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo {
+    margin-left: 73px;
+}
+header .logo img {
+    width: 185px;
+    height: 55px;
+}
+header ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-right: 80px;
+}
+header li {
+    margin-left: 59px;
+}
+header li a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+header li.login a {
+    display: flex;
+}
+header li.get-quote a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background: var(--color-cta);
+    border-radius: 7px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 0.03em;
+}
+header .burger {
+    display: none;
+}
+
+
+/* ############################# */
+/*         Forms styles          */
+/* ############################# */
+.home-form {
+    background: white;
+    display: inline-flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);
+    border-radius: 7px;
+    width: 454px;
+    height: 402px;
+    padding: 0 42px;
+}
+.home-form h2 {
+    font-size: 18px;
+    margin-top: 36px;
+    margin-bottom: 5px;
+}
+.home-form input,
+.home-form .select-group .screen {
+    font-family: var(--font-main);
+    height: 50px;
+    width: 100%;
+    border-radius: 7px;
+    border: 2px solid #eaeaea;
+    margin-top: 20px;
+    padding: 0 25px;
+    font-size: 15px;
+    color: var(--color-text-light);
+}
+.home-form input[type=submit] {
+    font-family: var(--font-secondary);
+    margin-top: 35px;
+    background-color: var(--color-cta);
+    height: 50px;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 0.04rem;
+    cursor: pointer;
+    transition: .2s;
+    border: 0;
+}
+.home-form input[type=submit]:hover {
+    filter: brightness(0.8);
+}
+.home-form .select-group select {
+    display: none;
+}
+.home-form .select-group .pretty-select {
+    position: relative;
+}
+.home-form .select-group .screen {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.home-form .select-group .screen:after {
+    content: '▼';
+    font-size: 9px;
+    position: absolute;
+    right: 17px;
+    transition: .2s;
+}
+.home-form .select-group.active .screen:after {
+    transform: rotate(180deg);
+}
+.home-form .select-group .options {
+    overflow: hidden;
+    transition: .2s;
+    background: white;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    border-radius: 7px;
+    top: 56px;
+}
+.home-form .select-group.active .options {
+    border: 2px solid #eaeaea;
+    box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);
+}
+.home-form .select-group .options div {
+    height: 0px;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    font-size: 14px;
+    color: var(--color-text-light);
+    transition: .2s;
+    cursor: pointer;
+    opacity: 0;
+}
+.home-form .select-group .options div b,
+.home-form .select-group .screen b {
+    margin-right: 5px;
+}
+.home-form .select-group.active .options div {
+    height: 40px;
+    opacity: 1;
+}
+.home-form .select-group.active .options div:hover {
+    padding-left: 30px;
+}
+.home-form .select-group.active .options div:not(:last-of-type) {
+    border-bottom: 2px solid #eaeaea;
+}
+.home-form .extra-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 19px;
+}
+.home-form .extra-controls .checkbox-with-label {
+    display: flex;
+    align-items: center;
+}
+.home-form .extra-controls .checkbox-wrap {
+    position: relative;
+    height: 15px;
+    width: 15px;
+    border: 2px solid #EAEAEA;
+    border-radius: 2px;
+    top: 0;
+    overflow: hidden;
+}
+.home-form .extra-controls input {
+    height: 15px;
+    width: 15px;
+    margin: 0;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    cursor: pointer;
+}
+.home-form .extra-controls label {
+    color: var(--color-text-light);
+    font-size: 12px;
+    margin-left: 9px;
+    cursor: pointer;
+}
+.home-form .extra-controls a {
+    font-size: 12px;
+    color: #0645AD;
+}
+.home-form .i-icon {
+    position: relative;
+    margin-left: 16px;
+}
+.home-form .i-icon::before {
+    content: 'i';
+    position: absolute;
+    background: #0645AD;
+    left: -17px;
+    top: 4px;
+    height: 11px;
+    width: 11px;
+    border-radius: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+}
+
+
+/* ############################# */
+/*         Login section         */
+/* ############################# */
+.login {
+    flex-direction: column;
+    align-items: center;
+}
+.login h1 {
+    color: var(--color-cta);
+    font-size: 36px;
+    margin-top: 77px;
+    margin-bottom: 31px;
+}
+.login .home-form {
+    padding-top: 22px;
+}
+.login .home-form input[type=submit] {
+    margin-top: 29px;
+}
+.login .home-form {
+    height: auto;
+    padding-bottom: 20px;
+}
+.login .other-variant {
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-text-light);
+    line-height: 2.3;
+    margin-top: 10px;
+}
+.login .other-variant a {
+    font-size: 12px;
+    color: #0645AD;
+}
+
+
+/* ############################# */
+/*           Dashboard           */
+/* ############################# */
+.dashboard {
+    flex-direction: column;
+    align-items: center;
+}
+.dashboard h1 {
+    color: var(--color-cta);
+    font-size: 36px;
+    margin-top: 99px;
+    margin-bottom: 31px;
+}
+.dashboard .dashboard-form {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);
+    width: 100%;
+    max-width: 1280px;
+    /* min-height: 480px; */
+    border-radius: 7px;
+    padding: 41px;
+}
+.dashboard .selector {
+    flex: 0 32.6%;
+}
+.dashboard .selector .item {
+    display: flex;
+    align-items: center;
+    background: #F8A543;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.dashboard .selector .item:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+.dashboard .selector p {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-family: var(--font-secondary);
+    font-size: 19px;
+}
+.dashboard .screens {
+    flex: 0 64%;
+}
+.dashboard .screen {
+    display: none;
+}
+.dashboard .screen.active {
+    border-radius: 7px;
+    display: flex;
+}
+.dashboard .vehicle-drivers {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    overflow: hidden;
+}
+.dashboard .vehicle-drivers .vehicles,
+.dashboard .vehicle-drivers .drivers {
+    display: flex;
+    flex-direction: column;
+    background-color: #F6F6F6;
+    padding: 26px 39px;
+    overflow: hidden;
+}
+.dashboard .vehicle-drivers .vehicles {
+    flex: 0 52%;
+}
+.dashboard .vehicle-drivers .drivers {
+    flex: 0 47%;
+    padding-bottom: 0;
+    padding-top: 17px;
+}
+.dashboard .vehicle-drivers h2 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--color-text-light);
+}
+.dashboard .vehicle-drivers table {
+    margin-top: 8px;
+    height: 119px;
+    display: block;
+    overflow-y: scroll;
+}
+.dashboard .vehicle-drivers thead {
+    display: block;
+    position: sticky;
+    background: #f6f6f6;
+    top: 0;
+}
+.dashboard .vehicle-drivers tr {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+.dashboard .vehicle-drivers th {
+    width: 130px;
+    height: 29px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    background: #dedede;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+.dashboard .vehicle-drivers th.action {
+    width: 98px;
+    border: 1px solid var(--color-cta);
+    color: var(--color-cta);
+    cursor: pointer;
+    font-size: 12px;
+    background: transparent;
+}
+.dashboard .vehicle-drivers td {
+    height: 30px;
+    background: white;
+    width: 130px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: var(--color-text-light);
+}
+.dashboard .vehicle-drivers td.action {
+    width: 98px;
+    border: 1px solid var(--color-cta);
+    color: var(--color-cta);
+    background: var(--color-cta);
+    cursor: pointer;
+    font-size: 12px;
+}
+.dashboard .vehicle-drivers tbody {
+    display: block;
+}
+.dashboard ::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+.dashboard ::-webkit-scrollbar-track {
+    background: #FFFFFF;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.dashboard ::-webkit-scrollbar-thumb {
+    background: #F0F0F0;
+    border-radius: 5px;
+}
+.dashboard .change-coverage {
+    flex-direction: column;
+    padding: 17px 34px;
+    background: #F6F6F6;
+    padding-bottom: 13px;
+}
+.dashboard .change-coverage h2,
+.dashboard .edit-driver h2 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--color-text-light)
+}
+.dashboard .change-coverage form {
+    display: flex;
+    box-shadow: unset;
+    background: transparent;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
+    margin-top: 12px;
+    padding-right: 10px;
+}
+.dashboard .change-coverage .form-group input,
+.dashboard .change-coverage .form-group .select-group .screen {
+    margin-top: 0;
+}
+.dashboard .change-coverage .form-group {
+    margin-bottom: 20px;
+    flex: 0 48.6%;
+}
+.dashboard .change-coverage .form-group .cancel,
+.dashboard .edit-driver .cancel {
+    display: flex;
+    font-family: var(--font-secondary);
+    height: 50px;
+    color: var(--color-cta);
+    font-size: 18px;
+    letter-spacing: 0.04rem;
+    cursor: pointer;
+    border: 2px solid var(--color-cta);
+    border-radius: 8px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+.dashboard .change-coverage .form-group input[type="date"],
+.dashboard .change-coverage .form-group input[type="date"]::before {
+    background-color: #eaeaea;
+    cursor: pointer;
+}
+.dashboard .edit-driver {
+    flex-direction: column;
+    padding: 18px 33px;
+    background: #f6f6f6;
+    padding-bottom: 13px;
+    position: relative;
+}
+.dashboard .edit-driver form {
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    padding-right: 13px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    margin-top: 12px;
+}
+.dashboard .edit-driver input,
+.dashboard .edit-driver .screen {
+    margin: 0;
+    background: transparent;
+}
+.dashboard .edit-driver .form-group {
+    margin-bottom: 20px;
+    flex: 0 100%;
+}
+.dashboard .edit-driver .form-group.third {
+    flex: 0 31.2%;
+}
+.dashboard .edit-driver .form-group.half {
+    flex: 0 48.5%;
+}
+.dashboard .edit-driver input[type=submit] {
+    background: var(--color-cta);
+}
+.dashboard .form-group.nomargin {
+    margin: 0;
+}
+.dashboard .edit-driver .remove {
+    display: none;
+    position: absolute;
+    right: 45px;
+    top: 19px;
+    color: var(--color-cta);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.dashboard .edit-driver.edit .remove {
+    display: inherit;
+}
+
+
+/* ############################# */
+/*            Footer             */
+/* ############################# */
+footer {
+    position: relative;
+    height: 270px;
+    margin-top: 44px;
+    display: flex;
+    justify-content: center;
+}
+footer .bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 15px;
+    margin-top: 109px;
+}
+footer ul {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    margin-top: 58px;
+}
+footer li {
+    margin-right: 67px;
+}
+footer li a {
+    color: white;
+    text-decoration: none;
+}
+footer .center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .socials {
+    display: flex;
+    margin-top: 11px;
+}
+footer .socials a {
+    margin: 0 14px;
+}
+footer .copyright {
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.02rem;
+    margin-top: 20px;
+}
+footer .right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+footer .right a {
+    background: white;
+    margin-top: 42px;
+    width: 274px;
+    height: 50px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-cta);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    letter-spacing: 0.03rem;
+}
+
+
+
+/* ############################# */
+/*        Responsiveness         */
+/* ############################# */
+@media screen and (max-width: 1200px){
+    .dashboard .dashboard-form {
+        flex-direction: column;
+    }
+    .dashboard .selector {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+    }
+    .dashboard .selector .item {
+        margin-bottom: 20px;
+        flex: 0 24%;
+    }
+    .dashboard .selector p {
+        font-size: 19px;
+        padding: 0 10px;
+    }
+    .dashboard .vehicle-drivers {
+        height: 410px;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    header .logo {
+        margin-left: 20px;
+    }
+    header ul {
+        margin-right: 20px;
+    }
+    header li {
+        margin-left: 30px;
+    }
+    .dashboard .selector {
+        flex-wrap: wrap;
+    }
+    .dashboard .selector .item {
+        flex: 0 49%;
+    }
+    footer li {
+        margin-right: 0;
+        margin-bottom: 13px;
+        margin-left: 30px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    header ul {
+        position: fixed;
+        background: rgba(255,255,255,0.9);
+        width: 100%;
+        height: 0;
+        padding-top: 0;
+        z-index: 9998;
+        top: 0;
+        border-radius: 7px;
+        flex-direction: column;
+        overflow: hidden;
+        transition: .2s;
+    }
+    header ul.active {
+        height: 55vh;
+        padding-top: 60px;
+    }
+    header li {
+        margin: 12px 0;
+    }
+    header li a {
+        font-size: 21px;
+    }
+    header .burger {
+        display: block;
+        position: absolute;
+        height: 90px;
+        width: 90px;
+        right: 30px;
+        cursor: pointer;
+        z-index: 9999;
+    }
+    header .burger::after,
+    header .burger::before {
+        content: '';
+        background: var(--color-cta);
+        position: absolute;
+        height: 5px;
+        width: 50px;
+        border-radius: 110px;
+        left: 20px;
+        transition: .2s;
+    }
+    header .burger::after {
+        top: 35px;
+    }
+    header .burger::before {
+        top: 53px;
+    }
+    header ul.active ~ .burger::after {
+        transform: rotate(-45deg);
+        top: 40px;
+    }
+    header ul.active ~ .burger::before {
+        transform: rotate(45deg);
+        top: 40px;
+    }
+    .dashboard .vehicle-drivers .drivers {
+        overflow-x: scroll;
+    }
+    .dashboard .vehicle-drivers table {
+        min-width: 650px;
+    }
+    .dashboard .change-coverage .form-group {
+        flex: 0 100%;
+    }
+    .dashboard .change-coverage .form-group .cancel, 
+    .dashboard .edit-driver .cancel {
+        margin-bottom: 20px;
+    }
+    .dashboard .edit-driver .form-group.third,
+    .dashboard .edit-driver .form-group.half {
+        flex: 0 100%;
+    }
+    footer {
+        height: auto;
+    }
+    footer .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer li {
+        margin: 0 30px;
+    }
+    footer ul {
+        margin-bottom: 30px;
+    }
+    footer .right a {
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .dashboard .selector .item {
+        flex: 0 100%;
+    }
+} 
+
+@media screen and (max-width: 485px) {
+    .home-form {
+        width: 95%;
+    }
+}
+
