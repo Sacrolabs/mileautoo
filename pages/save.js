@@ -4,7 +4,7 @@ const Save = ()=> {
     return (
         <>
         <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Quote Page</title>
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
@@ -14,7 +14,7 @@ const Save = ()=> {
 
          <img className="account-hero" src="./assets/images/account-hero.svg" alt="account-hero-background"></img>
        <section className="fill-place quote saves">
-        <h1>Here's How Much You Could <br/>be Saving With Mile Auto:</h1>
+        <h1>Here is How Much You Could <br/>be Saving With Mile Auto:</h1>
         <form action="" method="post" className="home-form">
             <div className="step active">
                 <div className="form-group price-block">

@@ -126,7 +126,7 @@ const Dashboard = ()=> {
     return (
         <>
        <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Dashboard</title>
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
@@ -151,7 +151,7 @@ const Dashboard = ()=> {
                     </div>
                     <p>CHANGE VEHICLE</p>
                 </div>
-                <div data-tab="2" onclick="
+                <div data-tab="2" onClick="
                     removeActiveFromList('.dashboard .selector .item'); 
                     removeActiveFromList('.dashboard .screens .screen'); 
                     addActive('.dashboard .selector .item[data-tab=\'2\']'); 
@@ -161,7 +161,7 @@ const Dashboard = ()=> {
                     </div>
                     <p>CHANGE DRIVERS</p>
                 </div>
-                <div data-tab="3" onclick="
+                <div data-tab="3" onClick="
                     removeActiveFromList('.dashboard .selector .item'); 
                     removeActiveFromList('.dashboard .screens .screen'); 
                     addActive('.dashboard .selector .item[data-tab=\'3\']'); 
@@ -464,7 +464,7 @@ const Dashboard = ()=> {
                             <input required type="date" name="date" placeholder="Policy Effective Date"/>
                         </div>
                         <div className="form-group nomargin">
-                            <span onclick="
+                            <span onClick="
                             removeActiveFromList('.dashboard .selector .item'); 
                             removeActiveFromList('.dashboard .screens .screen'); 
                             addActive('.dashboard .selector .item[data-tab=\'1\']'); 
@@ -624,7 +624,7 @@ const Dashboard = ()=> {
                             </div>
                         </div>
                         <div className="form-group half nomargin">
-                            <span onclick="
+                            <span onClick="
                             removeActiveFromList('.dashboard .selector .item'); 
                             removeActiveFromList('.dashboard .screens .screen'); 
                             addActive('.dashboard .selector .item[data-tab=\'1\']'); 
@@ -800,7 +800,7 @@ const Dashboard = ()=> {
                             <input type="text" name="milesperyear" placeholder="How many miles do you drive annualy?"/>
                         </div>
                         <div className="form-group half nomargin">
-                            <span onclick="
+                            <span onClick="
                             removeActiveFromList('.dashboard .selector .item'); 
                             removeActiveFromList('.dashboard .screens .screen'); 
                             addActive('.dashboard .selector .item[data-tab=\'1\']'); 

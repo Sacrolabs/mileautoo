@@ -62,7 +62,7 @@ const AgentPage = ()=> {
                 <div className="form-group two-thirds">
                     <div className="select-group">
                         <select name="miles" required>
-                            <option value="">How's your credit?</option>
+                            <option value="">How is your credit?</option>
                             <option value="0-1000">Very Low (0-1000 miles)</option>
                             <option value="1000-5000">Low (1000-5000 miles)</option>
                             <option value="5000-10000">Avarage (5000-10000 miles)</option>
@@ -70,7 +70,7 @@ const AgentPage = ()=> {
                             <option value="20000+">High (more than 20000 miles)</option>
                         </select>
                         <div className="pretty-select">
-                            <div className="screen">How's your credit?</div>
+                            <div className="screen">How is your credit?</div>
                             <div className="options">
                                 <div className="pretty-option" data-value="0-1000"><b>Very Low</b> (0-1000 miles)</div>
                                 <div className="pretty-option" data-value="1000-5000"><b>Low</b> (1000-5000 miles)</div>

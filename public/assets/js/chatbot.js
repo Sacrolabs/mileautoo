@@ -89,7 +89,7 @@ function chatbotAddContent(type = 'bot', content = '', dataName = '', pattern = 
         answers.forEach(answer => {
             let singleAnswer = document.createElement('span');
             singleAnswer.innerHTML = answer;
-            singleAnswer.onclick = chatbotAnswerHandler;
+            singleAnswer.onClick = chatbotAnswerHandler;
             answersWrapper.appendChild(singleAnswer);
         });
         screen.appendChild(answersWrapper);
