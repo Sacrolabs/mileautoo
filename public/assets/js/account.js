@@ -99,13 +99,3 @@ function editVehicleHandler(e) {
     editVehicleSection.querySelector('.hidden input[name="vehicle-id"]').value = vehicle;
     editVehicleSection.querySelector('h2').innerHTML = `Vehicle #${vehicle}`;
 }
-export {
-    editVehicleHandler,
-    addVehicleHandler,
-    editDriverHandler,
-    addDriverHandler,
-    addActive,
-    removeActiveFromList,
-    applySelectedValue,
-    toggleActive,
-}

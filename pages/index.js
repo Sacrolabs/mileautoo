@@ -5,6 +5,14 @@
 const Home = ()=> {
   return (
     <>
+
+           <meta charSet="UTF-8" />
+            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            {/* <title>Home</title> */}
+            <link rel="stylesheet" href="./assets/css/glider.min.css" />
+            <link rel="stylesheet" href="./assets/css/home.css" />
+
        <section className="hero">
         <div className="wrapper">
             <img className="man-with-car" src="./assets/images/man-car-mountain-new.svg" alt="man-car-mountain" />
@@ -687,6 +695,9 @@ const Home = ()=> {
         <img loading="lazy" className="bg" src="./assets/images/bg-footer-form.svg" alt="bg-footer-form"/>
     </section>
     
+           <script src="./assets/js/glider.min.js"></script>
+            <script src="./assets/js/home.js"></script>
+
     </>
   )
 }

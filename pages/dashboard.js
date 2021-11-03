@@ -1,29 +1,149 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+// import dynamic from 'next/dynamic'
+import Script from 'next/script'
 
-import {
-    editVehicleHandler,
-    addVehicleHandler,
-    editDriverHandler,
-    addDriverHandler,
-    addActive,
-    removeActiveFromList,
-    applySelectedValue,
-    toggleActive,
-} from '../public/assets/js/account'
+// import {
+//     editVehicleHandler,
+//     addVehicleHandler,
+//     editDriverHandler,
+//     addDriverHandler,
+//     addActive,
+//     removeActiveFromList,
+//     applySelectedValue,
+//     toggleActive,
+// } from '../public/assets/js/account'
 
 const Dashboard = ()=> {
+
+//    useEffect(() => {
+//        alert('Finished loading');
+
+//        const burger = document.querySelector('header .burger');
+//         const menu = document.querySelector('header ul');
+//         const prettySelects = document.querySelectorAll('.select-group');
+//         const addDriver = document.querySelector('.addDriver');
+//         const editDrivers = document.querySelectorAll('.editDriver');
+//         const addVehicle = document.querySelector('.addVehicle');
+//         const editVehicles = document.querySelectorAll('.editVehicle');
+
+//         burger.addEventListener('click', () => {toggleActive(menu)}, {passive: true});
+//         if(addDriver) {
+//             addDriver.addEventListener('click', addDriverHandler, {passive: true});
+//         }
+//         if(addVehicle) {
+//             addVehicle.addEventListener('click', addVehicleHandler, {passive: true});
+//         }
+
+//         prettySelects.forEach(select => {
+//             select.addEventListener('click', (e) => {
+//                 if (e.currentTarget.querySelector('.screen').classList.contains('predefined')) return;
+//                 toggleActive(e.currentTarget);
+//                 applySelectedValue(e);
+//             }, {passive: true});
+//         });
+
+//         editDrivers.forEach(button => {
+//             button.addEventListener('click', (e) => {editDriverHandler(e)}, {passive: true});
+//         });
+
+//         editVehicles.forEach(button => {
+//             button.addEventListener('click', (e) => {editVehicleHandler(e)}, {passive: true});
+//         });
+
+//         function toggleActive(elem) {
+//             elem.classList.toggle('active');
+//         }
+
+//         function applySelectedValue(e) {
+//             const element = e.target.closest('.pretty-option');
+
+//             if (element != null) {
+//                 if (typeof element.dataset.value != 'undefined') {
+//                     e.currentTarget.querySelector('select').value = element.dataset.value;
+//                     e.currentTarget.querySelector('.screen').innerHTML = element.innerHTML;
+//                 }
+//             }
+//         }
+
+//         function removeActiveFromList(cssPathToList) {
+//             const list = document.querySelectorAll(cssPathToList);
+//             list.forEach(item => {
+//                 item.classList.remove('active');
+//             });
+//         }
+
+//         function addActive(cssClass) {
+//             document.querySelector(cssClass).classList.add('active');
+//         }
+
+//         function addDriverHandler() {
+//             const editDriverSection = document.querySelector('.edit-vehicle-screen');
+
+//             removeActiveFromList('.dashboard .screens .screen'); 
+//             editDriverSection.classList.add('active');
+//             editDriverSection.classList.remove('edit');
+//             editDriverSection.querySelector('h2').innerHTML = 'Add New Driver';
+
+//         }
+
+//         function editDriverHandler(e) {
+//             const driver = e.currentTarget.dataset.driver;
+//             const editDriverSection = document.querySelector('.edit-driver-screen');
+
+//             removeActiveFromList('.dashboard .screens .screen'); 
+
+//             editDriverSection.classList.add('active');
+//             editDriverSection.classList.add('edit');
+//             editDriverSection.querySelector('.hidden input[name="driver-id"]').value = driver;
+//             editDriverSection.querySelector('h2').innerHTML = `Driver #${driver}`;
+//         }
+
+//         function addVehicleHandler() {
+//             const editVehicleSection = document.querySelector('.edit-vehicle-screen');
+
+//             removeActiveFromList('.dashboard .screens .screen'); 
+//             editVehicleSection.classList.add('active');
+//             editVehicleSection.classList.remove('edit');
+//             editVehicleSection.querySelector('h2').innerHTML = 'Add New Veicle';
+
+//         }
+
+//         function editVehicleHandler(e) {
+//             const vehicle = e.currentTarget.dataset.vehicle;
+//             const editVehicleSection = document.querySelector('.edit-vehicle-screen');
+
+//             removeActiveFromList('.dashboard .screens .screen'); 
+
+//             editVehicleSection.classList.add('active');
+//             editVehicleSection.classList.add('edit');
+//             editVehicleSection.querySelector('.hidden input[name="vehicle-id"]').value = vehicle;
+//             editVehicleSection.querySelector('h2').innerHTML = `Vehicle #${vehicle}`;
+//         }
+
+            
+//    }, [])
+
     return (
         <>
+       <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/account.css"/>
+            
              <section className="fill-place dashboard">
         <h1>Welcome back, John Doe.</h1>
         <div className="dashboard-form">
             <div className="selector">
-                <div data-tab="1" onclick=
-{
-                    removeActiveFromList('.dashboard .selector .item'),
-                    removeActiveFromList('.dashboard .screens .screen'),
-                    addActive('.dashboard .selector .item[data-tab=\'1\']'),
-                    addActive('.vehicle-drivers')
+                <div data-tab="1" onClick={()=>{
+                   removeActiveFromList('.dashboard .selector .item');
+                    removeActiveFromList('.dashboard .screens .screen');
+                    addActive('.dashboard .selector .item[data-tab=\'1\']');
+                    addActive('.vehicle-drivers');
+                }
                     }
                     className="item active">
                     <div className="icon">
@@ -695,6 +815,7 @@ const Dashboard = ()=> {
         </div>
     </section>
     
+    <script src="./assets/js/account.js"></script>
         </>
     )
 }

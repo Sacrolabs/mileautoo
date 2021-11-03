@@ -3,6 +3,15 @@ import React from 'react'
 const Chatbot = ()=> {
     return (
         <>
+         <meta charset="UTF-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <title>Home</title>
+            <link rel="preconnect" href="https://fonts.gstatic.com"/>
+            <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+            <link rel="stylesheet" href="./assets/css/chatbot.css"></link>
+
             <section className="chatbot fill-place">
         <svg className="bg" data-type="cloud" data-status="question" width="1440" height="804" viewBox="0 0 1440 804" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1440 0H0V766.475C66.6667 773.271 253.1 770.466 465.5 704.879C677.9 639.293 909.333 664.828 998.5 685.794C1120.5 718.326 1380.4 770.466 1440 718.76V638.513V0Z" fill="#00C2FF"/>
@@ -102,6 +111,7 @@ const Chatbot = ()=> {
         </div>
     </section>
     
+    <script src="./assets/js/chatbot.js"></script>
         </>
     )
 }

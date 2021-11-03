@@ -1,11 +1,33 @@
 import React from 'react'
 
+// import Form from 'react-jsonschema-form'
+
+
+import CustomerForm from '../components/Form/CustomerForm'
+
 const Quote = ()=> {
+
+  
+
+
+
+
     return (
         <>
+
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quote Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/quote.css"/>
+
              <section className="fill-place quote">
         <h1 className="not-last-page">Receive a Quote</h1>
         <h2 className="not-last-page">Please use the form below to receive a tailored quote, and note that <br/><span>you will need your drivers license number and current insurance information</span>, if applicable.</h2>
+       
         <div className="form-steps not-last-page">
             <div data-step="1" className="step active"><h3>1. Your Info</h3></div>
             <div data-step="2" className="step"><h3>2. Your Vehicle</h3></div>
@@ -13,108 +35,132 @@ const Quote = ()=> {
             <div data-step="4" className="step"><h3>4. Your Coverage</h3></div>
             <div data-step="5" className="step"><h3>5. Purchase</h3></div>
         </div>
-        <h1 className="last-page last-page-title hidden">Your Quote Summary</h1>
-        <form action="" method="post" className="home-form">
-            <div data-step="1" className="step information active">
-                <div className="form-group">
-                    <h4>Your Information</h4>
-                </div>
-                <div className="form-group half">
-                    <input className="input-error" type="text" name="fname" placeholder="First Name"/>
-                </div>
-                <div className="form-group half">
-                    <input className="predefined" type="text" name="lname" placeholder="Last Name"/>
-                </div>
-                <div className="form-group third">
-                    <input type="text" name="street" placeholder="Street Address"/>
-                </div>
-                <div className="form-group third">
-                    <input type="number" name="zip" placeholder="Zip Code"/>
-                </div>
-                <div className="form-group third">
-                    <input type="text" name="city" placeholder="City"/>
-                </div>
-                <div className="form-group half">
-                    <div className="select-group">
-                        <select name="miles" required>
-                            <option value="">State</option>
-                            <option value="0-1000">Very Low (0-1000 miles)</option>
-                            <option value="1000-5000">Low (1000-5000 miles)</option>
-                            <option value="5000-10000">Avarage (5000-10000 miles)</option>
-                            <option value="10000-20000">Above Avarage (10000-20000 miles)</option>
-                            <option value="20000+">High (more than 20000 miles)</option>
-                        </select>
-                        <div className="pretty-select">
-                            <div className="screen">State</div>
-                            <div className="options">
-                                <div className="pretty-option" data-value="0-1000"><b>Very Low</b> (0-1000 miles)</div>
-                                <div className="pretty-option" data-value="1000-5000"><b>Low</b> (1000-5000 miles)</div>
-                                <div className="pretty-option" data-value="5000-10000"><b>Avarage</b> (5000-10000 miles)</div>
-                                <div className="pretty-option" data-value="10000-20000"><b>Above Avarage</b> (10000-20000 miles)</div>
-                                <div className="pretty-option" data-value="20000+"><b>High</b> (more than 20000 miles)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="form-group half">
-                    <input required type="date" name="dob" placeholder="Date of Birth"/>
-                </div>
-                <div className="form-group half">
-                    <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Mobile (000-000-0000)"/>
-                </div>
-                <div className="form-group half">
-                    <input type="tel" name="preffered-contact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Preferred Contact (000-000-0000)"/>
-                </div>
-                <div className="form-group half">
-                    <div className="select-group">
-                        <select name="miles" required>
-                            <option value="">How's your credit?</option>
-                            <option value="0-1000">Very Low (0-1000 miles)</option>
-                            <option value="1000-5000">Low (1000-5000 miles)</option>
-                            <option value="5000-10000">Avarage (5000-10000 miles)</option>
-                            <option value="10000-20000">Above Avarage (10000-20000 miles)</option>
-                            <option value="20000+">High (more than 20000 miles)</option>
-                        </select>
-                        <div className="pretty-select">
-                            <div className="screen predefined">How's your credit?</div>
-                            <div className="options">
-                                <div className="pretty-option" data-value="0-1000"><b>Very Low</b> (0-1000 miles)</div>
-                                <div className="pretty-option" data-value="1000-5000"><b>Low</b> (1000-5000 miles)</div>
-                                <div className="pretty-option" data-value="5000-10000"><b>Avarage</b> (5000-10000 miles)</div>
-                                <div className="pretty-option" data-value="10000-20000"><b>Above Avarage</b> (10000-20000 miles)</div>
-                                <div className="pretty-option" data-value="20000+"><b>High</b> (more than 20000 miles)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="form-group half">
-                    <div className="select-group">
-                        <select name="miles" required>
-                            <option value="">How did you hear about Mile Auto?</option>
-                            <option value="0-1000">Very Low (0-1000 miles)</option>
-                            <option value="1000-5000">Low (1000-5000 miles)</option>
-                            <option value="5000-10000">Avarage (5000-10000 miles)</option>
-                            <option value="10000-20000">Above Avarage (10000-20000 miles)</option>
-                            <option value="20000+">High (more than 20000 miles)</option>
-                        </select>
-                        <div className="pretty-select">
-                            <div className="screen input-error">How did you hear about Mile Auto?</div>
-                            <div className="options">
-                                <div className="pretty-option" data-value="0-1000"><b>Very Low</b> (0-1000 miles)</div>
-                                <div className="pretty-option" data-value="1000-5000"><b>Low</b> (1000-5000 miles)</div>
-                                <div className="pretty-option" data-value="5000-10000"><b>Avarage</b> (5000-10000 miles)</div>
-                                <div className="pretty-option" data-value="10000-20000"><b>Above Avarage</b> (10000-20000 miles)</div>
-                                <div className="pretty-option" data-value="20000+"><b>High</b> (more than 20000 miles)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="form-group center">
-                    <span className="next next-step">CONTINUE</span>
-                </div>
-            </div>
 
-            <div data-step="2" className="step vehicle">
+        <h1 className="last-page last-page-title hidden">Your Quote Summary</h1>
+
+        {/* <form action="" method="post" className="home-form"> */}
+           
+
+
+
+        <form className="home-form">
+        <div data-step="1" className="step information active">
+               
+               <div className="form-group">
+                   <h4>Your Information</h4>
+               </div>
+
+               <CustomerForm />
+               {/* <div className="form-group half">
+                   <input className="input-error" type="text" name="fname" placeholder="First Name"/>
+               </div>
+               <div className="form-group half">
+                   <input className="predefined" type="text" name="lname" placeholder="Last Name"/>
+               </div>
+               <div className="form-group third">
+                   <input type="text" name="street" placeholder="Street Address"/>
+               </div>
+               <div className="form-group third">
+                   <input type="number" name="zip" placeholder="Zip Code"/>
+               </div>
+               <div className="form-group third">
+                   <input type="text" name="city" placeholder="City"/>
+               </div>
+               <div className="form-group half">
+                   <div className="select-group">
+                       <select name="miles" required>
+                           <option value="">State</option>
+                           <option value="0-1000">Very Low (0-1000 miles)</option>
+                           <option value="1000-5000">Low (1000-5000 miles)</option>
+                           <option value="5000-10000">Avarage (5000-10000 miles)</option>
+                           <option value="10000-20000">Above Avarage (10000-20000 miles)</option>
+                           <option value="20000+">High (more than 20000 miles)</option>
+                       </select>
+                       <div className="pretty-select">
+                           <div className="screen">State</div>
+                           <div className="options">
+                               <div className="pretty-option" data-value="0-1000"><b>Very Low</b> (0-1000 miles)</div>
+                               <div className="pretty-option" data-value="1000-5000"><b>Low</b> (1000-5000 miles)</div>
+                               <div className="pretty-option" data-value="5000-10000"><b>Avarage</b> (5000-10000 miles)</div>
+                               <div className="pretty-option" data-value="10000-20000"><b>Above Avarage</b> (10000-20000 miles)</div>
+                               <div className="pretty-option" data-value="20000+"><b>High</b> (more than 20000 miles)</div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div className="form-group half">
+                   <input required type="date" name="dob" placeholder="Date of Birth"/>
+               </div>
+               <div className="form-group half">
+                   <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Mobile (000-000-0000)"/>
+               </div>
+               <div className="form-group half">
+                   <input type="tel" name="preffered-contact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Preferred Contact (000-000-0000)"/>
+               </div>
+               <div className="form-group half">
+                   <div className="select-group">
+                       <select name="miles" required>
+                           <option value="">How's your credit?</option>
+                           <option value="0-1000">Very Low (0-1000 miles)</option>
+                           <option value="1000-5000">Low (1000-5000 miles)</option>
+                           <option value="5000-10000">Avarage (5000-10000 miles)</option>
+                           <option value="10000-20000">Above Avarage (10000-20000 miles)</option>
+                           <option value="20000+">High (more than 20000 miles)</option>
+                       </select>
+                       <div className="pretty-select">
+                           <div className="screen predefined">How's your credit?</div>
+                           <div className="options">
+                               <div className="pretty-option" data-value="0-1000"><b>Very Low</b> (0-1000 miles)</div>
+                               <div className="pretty-option" data-value="1000-5000"><b>Low</b> (1000-5000 miles)</div>
+                               <div className="pretty-option" data-value="5000-10000"><b>Avarage</b> (5000-10000 miles)</div>
+                               <div className="pretty-option" data-value="10000-20000"><b>Above Avarage</b> (10000-20000 miles)</div>
+                               <div className="pretty-option" data-value="20000+"><b>High</b> (more than 20000 miles)</div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div className="form-group half">
+                   <div className="select-group">
+                       <select name="miles" required>
+                           <option value="">How did you hear about Mile Auto?</option>
+                           <option value="0-1000">Very Low (0-1000 miles)</option>
+                           <option value="1000-5000">Low (1000-5000 miles)</option>
+                           <option value="5000-10000">Avarage (5000-10000 miles)</option>
+                           <option value="10000-20000">Above Avarage (10000-20000 miles)</option>
+                           <option value="20000+">High (more than 20000 miles)</option>
+                       </select>
+                       <div className="pretty-select">
+                           <div className="screen input-error">How did you hear about Mile Auto?</div>
+                           <div className="options">
+                               <div className="pretty-option" data-value="0-1000"><b>Very Low</b> (0-1000 miles)</div>
+                               <div className="pretty-option" data-value="1000-5000"><b>Low</b> (1000-5000 miles)</div>
+                               <div className="pretty-option" data-value="5000-10000"><b>Avarage</b> (5000-10000 miles)</div>
+                               <div className="pretty-option" data-value="10000-20000"><b>Above Avarage</b> (10000-20000 miles)</div>
+                               <div className="pretty-option" data-value="20000+"><b>High</b> (more than 20000 miles)</div>
+                           </div>
+                       </div>
+                   </div>
+               </div> */}
+
+               {/* End First form */}
+               <div className="form-group center">
+                   <span className="next next-step">CONTINUE</span>
+               </div>
+           </div>
+
+
+        </form>
+        
+
+
+
+
+
+
+
+
+
+            {/* <div data-step="2" className="step vehicle">
                 <div className="form-group half">
                     <h4>Your Vehicle</h4>
                 </div>
@@ -665,7 +711,7 @@ const Quote = ()=> {
                 </div>
 
                 <div className="form-group">
-                    <h4 style="margin-bottom: 20px;">Your Quote</h4>
+                    <h4 style={{marginBottom:'20px'}}>Your Quote</h4>
                 </div>
 
                 <div className="form-group half">
@@ -738,7 +784,7 @@ const Quote = ()=> {
                 </div>
 
                 <div className="form-group">
-                    <h4 style="margin-bottom: 20px;">Verify Your Drivers’ License Data</h4>
+                    <h4 style={{marginBottom:'20px'}}>Verify Your Drivers’ License Data</h4>
                 </div>
 
                 <div className="form-group half">
@@ -1086,10 +1132,11 @@ const Quote = ()=> {
                     <span className="next">CONFIRM</span>
                 </div>
             </div>
-            
-        </form>
+             */}
+        {/* </form> */}
     </section>
      
+      <script src="./assets/js/quote.js"></script>
         </>
     )
 }

@@ -3,6 +3,7 @@ import React from 'react'
 const BecomeAnAgent = ()=> {
     return (
         <>
+         <img className="account-hero" src="./assets/images/account-hero.svg" alt="account-hero-background"></img>
              <section className="fill-place quote agent become-agent">
         <h1>Apply to Become Agent</h1>
         <form action="" method="post" className="home-form">

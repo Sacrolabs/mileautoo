@@ -3,7 +3,7 @@ import React from 'react'
 const Estimate = ()=> {
     return (
         <>
-                
+      <img className="account-hero" src="./assets/images/account-hero.svg" alt="account-hero-background"></img>           
     <section className="fill-place quote estimate">
         <h1>Your Estimated Monthly Rate:</h1>
         <form action="" method="post" className="home-form">
