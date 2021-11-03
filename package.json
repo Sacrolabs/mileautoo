@@ -1,6 +1,10 @@
 {
   "name": "mileauto",
   "private": true,
+  "engines": {
+    "node": "14.x.x",
+    "npm": "6.x.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
