@@ -1,9 +1,18 @@
 import React from 'react'
+import AboutForm from '../components/Form/AboutForm'
 
 const About = ()=> {
     return (
         <>
-
+      <meta charset="UTF-8"/>
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/about.css"></link>
+            
 <meta charset="UTF-8"/>
     <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -348,7 +357,10 @@ const About = ()=> {
             <div className="right">
                 <div className="home-form">
                     <h2>How much can I save with Mile Auto?</h2>
-                    <form action="" method="post">
+
+                    <AboutForm />
+                            
+                    {/* <form action="" method="post">
                         <input type="text" name="name" placeholder="Full Name" required />
                         <input type="email" name="mail" placeholder="Email" required />
                         <input type="phone" name="phone" placeholder="Phone" required />
@@ -376,7 +388,7 @@ const About = ()=> {
                         </div>
     
                         <input type="submit" value="SEE MY SAVINGS"/>
-                    </form>
+                    </form> */}
                 </div>
             </div>
         </div>

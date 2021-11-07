@@ -1,9 +1,12 @@
 import React from 'react'
-
+import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
 // import Form from 'react-jsonschema-form'
 
 
 import CustomerForm from '../components/Form/CustomerForm'
+import VehicleForm from '../components/Form/VehicleForm'
+import DriversForm from '../components/Form/DriversForm'
+import CoverageForm from '../components/Form/CoverageForm'
 
 const Quote = ()=> {
 
@@ -51,6 +54,13 @@ const Quote = ()=> {
                </div>
 
                <CustomerForm />
+
+               {/* <VehicleForm /> */}
+               
+               {/* <DriversForm />          */}
+               
+                {/* <CoverageForm />         */}
+                        
                {/* <div className="form-group half">
                    <input className="input-error" type="text" name="fname" placeholder="First Name"/>
                </div>

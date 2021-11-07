@@ -3,6 +3,14 @@ import React from 'react'
 const AgentPage = ()=> {
     return (
         <>
+         <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quote Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/quote.css"></link>    
         <section className="fill-place quote agent">
         <h1>Get a Quick Quote to Estimate <br/>Pay-Per-Mile Savings for Your Customers.</h1>
         <form action="" method="post" className="home-form">
@@ -216,7 +224,7 @@ const AgentPage = ()=> {
             <a href="#" className="button green">BECOME AN AGENT</a>
         </div>
     </section>
-     
+      <script src="./assets/js/quote.js"></script>
         </>
     )
 }

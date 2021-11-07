@@ -1,8 +1,9 @@
 import React from 'react'
 import Form from 'react-jsonschema-form'
-
-
- const mySchema ={
+import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
+import LayoutField   from '/node_modules/react-jsonschema-form-layout-grid'
+ 
+const mySchema = {
 //   "title": "QuoteRequest",
 	"type": "object",
 	// "examples": [],
@@ -86,6 +87,14 @@ import Form from 'react-jsonschema-form'
 	  }
    }
 }
+
+
+  const fields = {
+  layout_grid: LayoutField ,
+//   TitleField: TitleField
+}
+
+
 const Tpl = (props)=> {
 
 	const {id, label, required, children} = props;
@@ -98,12 +107,14 @@ const Tpl = (props)=> {
 	// const elementClass = (id =="") ? "wanted_class_name" : ""
 
 	// const elementClass = (id =="root__estimated_credit_score") ? "options pretty-select" : "props.className"
+    // custom-select
+	// const elementClass = (id =="root__estimated_credit_score") ? "options" : `${props.classNames}`
 
-	const elementClass = (id =="root__estimated_credit_score") ? "options" : `${props.classNames}`
-
+	// const elementClass = (id == "root__estimated_credit_score") ? "custom-select" : `${props.classNames}`
+	
 	return (
-	//   <div className="form-group">
-	<div className={`${elementClass}`}>
+	  <div className="form-group">
+	 {/* <div className={`${elementClass}`}> */}
 		<label 
 		htmlFor={id}>
 			{/* {label} */}
@@ -121,10 +132,51 @@ const uiSchema = {
 	"ui:FieldTemplate": Tpl,
     // name: { 'ui:title': 'Full Name' },
     "": {
-      'ui:field': 'customer', // associate the address section of schema with the address custom field
-    //   "classNames": 'step information active ',
+    //   'ui:field': 'customer', // associate the address section of schema with the address custom field
+      'ui:field': 'layout_grid',
+	  //   "classNames": 'step information active ',
 	"classNames": '',
+	
+    'ui:layout_grid':{ 'ui:row': [
+    { 'ui:col': { md: 12, children:
+	 [ 
+		{
+		'ui:row': [
+			{ 'ui:col': { md: 6, children: ['first_name'] } },
+			{ 'ui:col': { md: 6, children: ['last_name'] } },
+				]
+			},
+		 
+		 { 'ui:row': [
+			{ 'ui:col': { md: 4, children: ['street_address_1'] } },
+			{ 'ui:col': { md: 4, children: ['zip_code'] } },
+			{ 'ui:col': { md: 4, children: ['city'] } },
 
+			]
+			},
+		 {
+		'ui:row': [
+			{ 'ui:col': { md: 6, children: ['state'] } },
+			{ 'ui:col': { md: 6, children: ['date_of_birth'] } },
+				]
+			},
+		 {
+		'ui:row': [
+			{ 'ui:col': { md: 6, children: ['mobile_phone_number'] } },
+			{ 'ui:col': { md: 6, children: ['preferred_contact_number'] } },
+				]
+			},
+		 {
+		'ui:row': [
+			{ 'ui:col': { md: 6, children: ['estimated_credit_score'] } },
+			{ 'ui:col': { md: 6, children: ['hear_about'] } },
+				]
+			},	
+			
+	 ]
+  } },
+  ] },
+  
       "first_name": {
 		"ui:placeholder": "First Name", 
         // "classNames": "form-group half",
@@ -170,7 +222,8 @@ const uiSchema = {
 		"ui:options": {
 			label: false
 		  },
-		  "classNames":"screen input-error",
+		//   "classNames":"screen input-error mt-md-3 form-select",
+		 "classNames":"mt-md-4 form-select form-select-sm mb-3",
         //   "ui:widget": (props) => {
 		// 	return (
 		// 	  <select 
@@ -193,7 +246,9 @@ const uiSchema = {
 		  "ui:placeholder": "Mobile (000-000-0000)",
 			"ui:options": {
 				label: false
-			  },
+		  },
+		// "ui:widget": "number",
+        // 'ui:column': 'xs6'	
 		//   "ui:help": "Hint: Type is cautiously!"
 
 	  },
@@ -239,7 +294,7 @@ const uiSchema = {
 			"ui:options": {
 				label: false
 			  },
-
+            // "classNames":"custom-select",
 			//   "ui:FieldTemplate": Tpl
 
 		  },
@@ -281,23 +336,29 @@ const uiSchema = {
 
 const CustomerForm = ()=> {
 
-	
+   const onSubmit = ({formData},e) =>{ e.preventDefault(); console.log("Data submitted: ",  formData)}	
 	  
 
     return (
-        <>
+		<>
+		{/* <div className="col-md-offset-3 col-md-6">	 */}
+		{/* <div> */}
             <Form 
             schema={mySchema}
             uiSchema={uiSchema}
-			FieldTemplate={Tpl} 
-			className="row"
+			// FieldTemplate={Tpl} 
+			// className="row"
+			fields={fields}
+			// onSubmit={onSubmit}
             >
 			<div>
-			<button type="submit">Submit</button>
-			<button type="button">Cancel</button>
+			{/* <button type="submit">Submit</button>
+			<button type="button">Cancel</button> */}
 			</div>
       
 			</Form>	
+			
+		{/* </div>		 */}
         </>
     )
 }
