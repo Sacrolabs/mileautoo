@@ -2,6 +2,10 @@
 // import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
 
+import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+import IndexForm from "../components/Form/IndexFrom"
+
 const Home = ()=> {
   return (
     <>
@@ -20,7 +24,10 @@ const Home = ()=> {
             <p>See how much you could save with <br/><b>Pay-Per-Mile</b> insurance from Mile Auto.</p>
             <div className="home-form">
                 <h2>How much can I save with Mile Auto?</h2>
-                <form action="" method="post">
+
+                 <IndexForm/>
+
+                {/* <form action="" method="post">
                     <input type="number" name="zip" placeholder="Zip Code" required/>
 
                     <div className="select-group">
@@ -66,7 +73,8 @@ const Home = ()=> {
                     </div>
 
                     <input type="submit" value="SEE MY SAVINGS"/>
-                </form>
+                </form> */}
+
             </div>
         </div>
     </section>
@@ -643,6 +651,9 @@ const Home = ()=> {
             <p className="subtitle">No credit check required</p>
             <div className="home-form">
                 <h2>How much can I save with Mile Auto?</h2>
+                <IndexForm/>
+
+{/* 
                 <form action="" method="post">
                     <input type="number" name="zip" placeholder="Zip Code" required/>
 
@@ -690,6 +701,7 @@ const Home = ()=> {
 
                     <input type="submit" value="SEE MY SAVINGS"/>
                 </form>
+                 */}
             </div>
         </div>
         <img loading="lazy" className="bg" src="./assets/images/bg-footer-form.svg" alt="bg-footer-form"/>

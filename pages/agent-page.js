@@ -1,4 +1,6 @@
 import React from 'react'
+import AgentForm from '../components/Form/AgentForm'
+import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 const AgentPage = ()=> {
     return (
@@ -11,11 +13,17 @@ const AgentPage = ()=> {
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="./assets/css/quote.css"></link>    
+    <img className="account-hero" src="./assets/images/account-hero.svg" alt="account-hero-background"></img>
+           
         <section className="fill-place quote agent">
         <h1>Get a Quick Quote to Estimate <br/>Pay-Per-Mile Savings for Your Customers.</h1>
-        <form action="" method="post" className="home-form">
-            <div className="step active">
+       
+     
 
+         <form action="" method="post" className="home-form">
+            <div className="step active">
+            <AgentForm/>
+{/* 
                 <div className="form-group third">
                     <input className="predefined" type="number" name="zip" placeholder="Zip Code"/>
                 </div>
@@ -212,9 +220,10 @@ const AgentPage = ()=> {
 
                 <div className="form-group center">
                     <span className="next">GET QUICK QUOTE</span>
-                </div>
+                </div> */}
             </div>       
         </form>
+         
     </section>
 
     <section className="existing-agent">

@@ -1,4 +1,5 @@
 import React from 'react'
+import SaveForm from '../components/Form/SaveForm'
 
 const Save = ()=> {
     return (
@@ -25,7 +26,10 @@ const Save = ()=> {
                     <p>Stop overpaying for traditional insurance and make the switch today.</p>
                     <p>Let's personalize your policy by entering a bit more information:</p>
                 </div>
-                <div className="form-group half">
+
+               <SaveForm/>
+
+                {/* <div className="form-group half">
                     <input type="date" name="dob" placeholder="Date of Birth"/>
                 </div>
                 <div className="form-group half">
@@ -211,7 +215,7 @@ const Save = ()=> {
 
                 <div className="form-group center">
                     <span className="next">GET QUICK QUOTE</span>
-                </div>
+                </div> */}
             </div>
             
         </form>

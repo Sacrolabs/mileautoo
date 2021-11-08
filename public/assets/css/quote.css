@@ -89,7 +89,7 @@ input[type="date"]:valid:before {
 }
 .predefined,
 .predefined[type="date"]::before {
-    pointer-events: none !important;
+    /* pointer-events: none !important; */
     background-color: #eaeaea !important;
 }
 

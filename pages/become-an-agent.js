@@ -1,4 +1,5 @@
 import React from 'react'
+import BecomeAgentFrom from '../components/Form/BecomeAgentFrom'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 
@@ -21,7 +22,8 @@ const BecomeAnAgent = ()=> {
         <form action="" method="post" className="home-form">
             <div className="step active">
 
-                <div className="form-group half">
+            <BecomeAgentFrom/>
+                {/* <div className="form-group half">
                     <input className="predefined" type="text" name="fname" placeholder="First Name"/>
                 </div>
                 <div className="form-group half">
@@ -109,7 +111,7 @@ const BecomeAnAgent = ()=> {
 
                 <div className="form-group center">
                     <span className="next">SUBMIT</span>
-                </div>
+                </div> */}
             </div>       
         </form>
     </section>

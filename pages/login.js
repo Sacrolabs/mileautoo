@@ -1,4 +1,5 @@
 import React from 'react'
+import LoginForm from '../components/Form/LoginForm'
 
 const Login = ()=> {
     return (
@@ -16,6 +17,8 @@ const Login = ()=> {
      <section className="fill-place login">
         <h1>Welcome to Mile.</h1>
         <div className="home-form">
+            <LoginForm/>
+{/*             
             <form action="" method="post">
                 <input type="email" name="email" placeholder="Email" required/>
                 <input type="password" name="password" placeholder="Password" required/>
@@ -31,6 +34,7 @@ const Login = ()=> {
                 <input type="submit" value="LOG IN"/>
             </form>
             <p className="other-variant">or <br/> <a className="i-icon" href="#">Log In Without Password</a> </p>
+         */}
         </div>
     </section>
       <script src="./assets/js/account.js"></script>
