@@ -57,13 +57,13 @@ const Quote = ()=> {
 
                {/* <CustomerForm /> */}
 
-               <VehicleForm />
+               {/* <VehicleForm /> */}
                
                {/* <DriversForm />          */}
                
                 {/* <CoverageForm />         */}
 
-                {/* <PurchaseFormIndex/> */}
+                <PurchaseFormIndex/>
                         
                {/* <div className="form-group half">
                    <input className="input-error" type="text" name="fname" placeholder="First Name"/>

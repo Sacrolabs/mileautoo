@@ -540,6 +540,10 @@ const Home = ()=> {
                 </div>
 
             </div>
+
+
+
+            
             <div className="fancy-buttons buttons">
                 <button aria-label="Previous" className="team-prev prev"></button>
                 <button aria-label="Next" className="team-next next"></button>
@@ -697,6 +701,8 @@ const Home = ()=> {
             </div>
         </div>
     </section>
+
+
 
     <section className="faq">
         <div className="wrapper">

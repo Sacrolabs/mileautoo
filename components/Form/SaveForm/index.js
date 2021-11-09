@@ -204,14 +204,7 @@ const uiSchema = {
     "ui:options": {
         label: false
       }, 
-      "ui:widget": (props) => {
-        return (
-          <input 
-            placeholder={props.placeholder}
-            className="predefined"
-             />
-        );
-      }
+      
     },
       "gender": {
     "ui:placeholder": "Gender",
