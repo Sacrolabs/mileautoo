@@ -438,6 +438,7 @@ header .burger {
 /* ############################# */
 .reviews {
     margin-top: 99px;
+    
 }
 .reviews .wrapper {
     max-width: 100%;
@@ -460,6 +461,7 @@ header .burger {
     flex-direction: column;
     padding: 0 162px;
     justify-content: center;
+    /* background-color: #FF0000; */
 }
 .reviews .slider p {
     line-height: 1.5;

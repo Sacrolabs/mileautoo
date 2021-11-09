@@ -12,30 +12,34 @@ const mySchema = {
 		"": {
 		"type": "object",
 		"required": [
-            "zip_code",
-            "miles_year",
-            "insurance_pay",
+            "",
+            ""
 		],
 		"properties": {
-			"zip_code": {
-                "type": "number"
-              },
-              "miles_year":{
+			"license_state": {
                 "type": "string",
-                    "enum": [
-                      "50,000 K.M",
-                      "100,000 K.M",
-                      "200,000 K.M",
-                    ]
-            },
-              "insurance_pay":{
+                "enum": [
+                  "Demo 1",
+                  "Demo 2",
+                  "Demo 3",
+                ]
+			},
+			"license_status": {
                 "type": "string",
-                    "enum": [
-                      "$25,000/$50,000",
-                      "$50,000/$100,0000",
-                      
-                    ]
-            },
+                "enum": [
+                  "Demo 1",
+                  "Demo 2",
+                  "Demo 3",
+                ]
+			},
+            "license_number": {
+                "type": "number",
+                "enum": [
+                  "1",
+                  "2",
+                  "3",
+                ]
+			},
         }
 	  }
    }
@@ -89,66 +93,62 @@ const uiSchema = {
       'ui:field': 'layout_grid',
 	  //   "classNames": 'step information active ',
 	"classNames": '',
+    // "zip_code",
+    // "date_of_birth",
+    // "gender",
+    // "marital_status",
+    // "estimated_credit_score",
+    // "lease_own_finance",
+    // "owned_year",
+    // "make",
+    // "has_auto_insurance",
+    // "agent_code",
     
     'ui:layout_grid':{ 'ui:row': [
     { 'ui:col': { md: 12, children:
 	 [ 
 	
 		{ 'ui:row': [
-			{ 'ui:col': { md: 12, children: ['zip_code'] } },
+			{ 'ui:col': { md: 12, children: ['license_state'] } },
 
 			]
 			},
         { 'ui:row': [
-			{ 'ui:col': { md: 12, children: ['miles_year'] } },
+			{ 'ui:col': { md: 12, children: ['license_status'] } },
 
 			]
 			},
-         { 'ui:row': [
-			{ 'ui:col': { md: 12, children: ['insurance_pay'] } },
+        { 'ui:row': [
+			{ 'ui:col': { md: 12, children: ['license_number'] } },
 
 			]
 			},
-       
 	 ]
   } },
   ] },
-   // "zip_code",
-    // "miles_year",
-    // "insurance_pay",
-   
-      "zip_code": {
-		"ui:placeholder": "Zip Code",
-		"classNames": "",
-		"ui:options": {
-			label: false
-		  }, 
-          "ui:widget": (props) => {
-			return (
-			  <input 
-			    placeholder={props.placeholder}
-			    className=""
-				 />
-			);
-		  }
-      },
-      "miles_year": {
-		"ui:placeholder": "Miles You Drive per Year",
-		"classNames": "mt-md-4 form-select form-select-sm mb-3",
-		"ui:options": {
-			label: false
-		  }, 
-          
-      },
-      "insurance_pay": {
-		"ui:placeholder": "Your Monthly Insurance Payment",
-		"classNames": "mt-md-4 form-select form-select-sm mb-3",
-		"ui:options": {
-			label: false
-		  }, 
-          
-      },
-      
+  
+      "license_state": {
+			"ui:placeholder": "License State",
+            "classNames": "mt-md-4 form-select form-select-sm mb-3",
+			"ui:options": {
+				label: false
+            },
+        },
+        "license_status": {
+			"ui:placeholder": "License Status",
+            "classNames": "mt-md-4 form-select form-select-sm mb-3",
+			"ui:options": {
+				label: false
+            },
+        },
+        "license_number": {
+			"ui:placeholder": "License Number",
+            "classNames": "mt-md-4 form-select form-select-sm mb-3",
+			"ui:options": {
+				label: false
+            },
+        },
+        
 		},
   
 
@@ -156,7 +156,7 @@ const uiSchema = {
 
 
 
-const IndexForm = ()=> {
+const PurchaseForm = ()=> {
 
    const onSubmit = ({formData},e) =>{ e.preventDefault(); console.log("Data submitted: ",  formData)}	
 	  
@@ -170,17 +170,15 @@ const IndexForm = ()=> {
             uiSchema={uiSchema}
 			// FieldTemplate={Tpl} 
 			// className="row"
-			className= 'px-md-0 py-md-0'
+            className= 'px-md-0 py-md-0'
 			fields={fields}
+            
 			// onSubmit={onSubmit}
             >
-          
 
-			<div style={{backgroundColor:'' ,marginBottom:'20px'}} className="d-flex align-items-center justify-content-center my-md-4">
-			<button style={{height:'45px', width:'350px', marginBottom:'20px'}}  className="btn btn-success" type="submit">SEE MY SAVINGS</button>
-			{/* <button type="button">Cancel</button> */}
-			</div>
-         
+            <div/>    
+
+    
 
 			</Form>	
 			
@@ -189,4 +187,4 @@ const IndexForm = ()=> {
     )
 }
 
-export default IndexForm
+export default PurchaseForm

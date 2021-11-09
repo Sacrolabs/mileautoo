@@ -7,6 +7,8 @@ import CustomerForm from '../components/Form/CustomerForm'
 import VehicleForm from '../components/Form/VehicleForm'
 import DriversForm from '../components/Form/DriversForm'
 import CoverageForm from '../components/Form/CoverageForm'
+import PurchaseForm from '../components/Form/PurchaseForm'
+import PurchaseFormIndex from '../components/PurchaseFormIndex'
 
 const Quote = ()=> {
 
@@ -53,13 +55,15 @@ const Quote = ()=> {
                    <h4>Your Information</h4>
                </div>
 
-               <CustomerForm />
+               {/* <CustomerForm /> */}
 
-               {/* <VehicleForm /> */}
+               <VehicleForm />
                
                {/* <DriversForm />          */}
                
                 {/* <CoverageForm />         */}
+
+                {/* <PurchaseFormIndex/> */}
                         
                {/* <div className="form-group half">
                    <input className="input-error" type="text" name="fname" placeholder="First Name"/>

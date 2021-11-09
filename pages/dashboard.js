@@ -1,127 +1,12 @@
 import React, {useEffect} from 'react'
 // import dynamic from 'next/dynamic'
 import Script from 'next/script'
-
-// import {
-//     editVehicleHandler,
-//     addVehicleHandler,
-//     editDriverHandler,
-//     addDriverHandler,
-//     addActive,
-//     removeActiveFromList,
-//     applySelectedValue,
-//     toggleActive,
-// } from '../public/assets/js/account'
+import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
+import VehicleDashForm from '../components/Form/VehicleDashForm';
+import DriversDashForm from '../components/Form/DriversDashForm';
+import EditCoverageForm from '../components/Form/EditCoverageForm';
 
 const Dashboard = ()=> {
-
-//    useEffect(() => {
-//        alert('Finished loading');
-
-//        const burger = document.querySelector('header .burger');
-//         const menu = document.querySelector('header ul');
-//         const prettySelects = document.querySelectorAll('.select-group');
-//         const addDriver = document.querySelector('.addDriver');
-//         const editDrivers = document.querySelectorAll('.editDriver');
-//         const addVehicle = document.querySelector('.addVehicle');
-//         const editVehicles = document.querySelectorAll('.editVehicle');
-
-//         burger.addEventListener('click', () => {toggleActive(menu)}, {passive: true});
-//         if(addDriver) {
-//             addDriver.addEventListener('click', addDriverHandler, {passive: true});
-//         }
-//         if(addVehicle) {
-//             addVehicle.addEventListener('click', addVehicleHandler, {passive: true});
-//         }
-
-//         prettySelects.forEach(select => {
-//             select.addEventListener('click', (e) => {
-//                 if (e.currentTarget.querySelector('.screen').classList.contains('predefined')) return;
-//                 toggleActive(e.currentTarget);
-//                 applySelectedValue(e);
-//             }, {passive: true});
-//         });
-
-//         editDrivers.forEach(button => {
-//             button.addEventListener('click', (e) => {editDriverHandler(e)}, {passive: true});
-//         });
-
-//         editVehicles.forEach(button => {
-//             button.addEventListener('click', (e) => {editVehicleHandler(e)}, {passive: true});
-//         });
-
-//         function toggleActive(elem) {
-//             elem.classList.toggle('active');
-//         }
-
-//         function applySelectedValue(e) {
-//             const element = e.target.closest('.pretty-option');
-
-//             if (element != null) {
-//                 if (typeof element.dataset.value != 'undefined') {
-//                     e.currentTarget.querySelector('select').value = element.dataset.value;
-//                     e.currentTarget.querySelector('.screen').innerHTML = element.innerHTML;
-//                 }
-//             }
-//         }
-
-//         function removeActiveFromList(cssPathToList) {
-//             const list = document.querySelectorAll(cssPathToList);
-//             list.forEach(item => {
-//                 item.classList.remove('active');
-//             });
-//         }
-
-//         function addActive(cssClass) {
-//             document.querySelector(cssClass).classList.add('active');
-//         }
-
-//         function addDriverHandler() {
-//             const editDriverSection = document.querySelector('.edit-vehicle-screen');
-
-//             removeActiveFromList('.dashboard .screens .screen'); 
-//             editDriverSection.classList.add('active');
-//             editDriverSection.classList.remove('edit');
-//             editDriverSection.querySelector('h2').innerHTML = 'Add New Driver';
-
-//         }
-
-//         function editDriverHandler(e) {
-//             const driver = e.currentTarget.dataset.driver;
-//             const editDriverSection = document.querySelector('.edit-driver-screen');
-
-//             removeActiveFromList('.dashboard .screens .screen'); 
-
-//             editDriverSection.classList.add('active');
-//             editDriverSection.classList.add('edit');
-//             editDriverSection.querySelector('.hidden input[name="driver-id"]').value = driver;
-//             editDriverSection.querySelector('h2').innerHTML = `Driver #${driver}`;
-//         }
-
-//         function addVehicleHandler() {
-//             const editVehicleSection = document.querySelector('.edit-vehicle-screen');
-
-//             removeActiveFromList('.dashboard .screens .screen'); 
-//             editVehicleSection.classList.add('active');
-//             editVehicleSection.classList.remove('edit');
-//             editVehicleSection.querySelector('h2').innerHTML = 'Add New Veicle';
-
-//         }
-
-//         function editVehicleHandler(e) {
-//             const vehicle = e.currentTarget.dataset.vehicle;
-//             const editVehicleSection = document.querySelector('.edit-vehicle-screen');
-
-//             removeActiveFromList('.dashboard .screens .screen'); 
-
-//             editVehicleSection.classList.add('active');
-//             editVehicleSection.classList.add('edit');
-//             editVehicleSection.querySelector('.hidden input[name="vehicle-id"]').value = vehicle;
-//             editVehicleSection.querySelector('h2').innerHTML = `Vehicle #${vehicle}`;
-//         }
-
-            
-//    }, [])
 
     return (
         <>
@@ -178,10 +63,12 @@ const Dashboard = ()=> {
                     <p>FILE CLAIM</p>
                 </div>
             </div>
+
             <div className="screens">
                 <div className="screen active vehicle-drivers">
                     <div className="vehicles">
                         <h2>Your Vehicles</h2>
+
                         <table>
                             <thead>
                                 <tr>
@@ -192,24 +79,29 @@ const Dashboard = ()=> {
                                     <th className="action addVehicle">Add New</th>
                                 </tr>
                             </thead>
+
                             <tbody>
                                 <tr>
                                     <td>Vehicle #1</td>
                                     <td>2021</td>
                                     <td>Honda</td>
                                     <td>Toyota</td>
+
                                     <td data-vehicle="1" className="action editVehicle">
                                         <img src="./assets/images/edit.svg" alt="edit"/>
                                     </td>
+
                                 </tr>
                                 <tr>
                                     <td>Vehicle #2</td>
                                     <td>2020</td>
                                     <td>BMW</td>
                                     <td>8 Series</td>
+
                                     <td data-vehicle="2" className="action editVehicle">
                                         <img src="./assets/images/edit.svg" alt="edit"/>
                                     </td>
+
                                 </tr>
                                 <tr>
                                     <td>Vehicle #3</td>
@@ -304,9 +196,13 @@ const Dashboard = ()=> {
                     </div>
                 </div>
                 <div className="screen change-coverage">
+                {/* <div onClick={()=> <EditCoverageForm/>}> */}
                     <h2>Edit Coverage</h2>
-                    <form action="" method="post" className="home-form">
-                        <div className="form-group">
+
+                    <form action="" method="" className="home-form">
+                      <EditCoverageForm/>
+
+                        {/* <div className="form-group">
                             <div className="select-group">
                                 <select name="miles" required>
                                     <option value="">Miles You Drive per Year</option>
@@ -472,17 +368,23 @@ const Dashboard = ()=> {
                         </div>
                         <div className="form-group nomargin">
                             <input type="submit" value="SAVE"/>
-                        </div>
-                    </form>
+                        </div> */}
+                    </form> 
+
+
                 </div>
                 <div className="screen edit-driver edit-driver-screen">
                     <h2>Add New Driver</h2>
                     <span className="remove">Remove</span>
+
+
                     <form action="" method="post" className="home-form">
                         <div className="hidden">
                             <input type="text" name="driver-id"/>
                         </div>
-                        <div className="form-group third">
+
+                        <DriversDashForm/>
+                        {/* <div className="form-group third">
                             <input type="text" name="fname" placeholder="First Name"/>
                         </div>
                         <div className="form-group third">
@@ -631,14 +533,27 @@ const Dashboard = ()=> {
                             addActive('.vehicle-drivers');" className="cancel">CANCEL</span>
                         </div>
                         <div className="form-group half nomargin">
-                            <input type="submit" value="ADD"/>
-                        </div>
+                            <input type="submit" value="ADD"/> */}
+                        {/* </div> */}
                     </form>
+
+
                 </div>
                 <div className="screen edit-driver edit-vehicle-screen">
                     <h2>Add New Veicle</h2>
                     <span className="remove">Remove</span>
+                    
+
                     <form action="" method="post" className="home-form">
+                        <div data-step="1" className="step information active">
+                        <div className="hidden">
+                            <input type="text" name="vehicle-id"/>
+                        </div>
+                    <VehicleDashForm/>
+                         </div>
+                     </form>
+
+                    {/* <form action="" method="post" className="home-form">
                         <div className="hidden">
                             <input type="text" name="vehicle-id"/>
                         </div>
@@ -809,7 +724,7 @@ const Dashboard = ()=> {
                         <div className="form-group half nomargin">
                             <input type="submit" value="ADD"/>
                         </div>
-                    </form>
+                    </form> */}
                 </div>
             </div>
         </div>

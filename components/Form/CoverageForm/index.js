@@ -296,6 +296,7 @@ const CoverageForm = ()=> {
             uiSchema={uiSchema}
 			// FieldTemplate={Tpl} 
 			// className="row"
+			className= 'px-md-0 py-md-0'
 			fields={fields}
 			// onSubmit={onSubmit}
             >

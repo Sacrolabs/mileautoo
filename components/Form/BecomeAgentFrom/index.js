@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from 'react-jsonschema-form'
+import Form, {withTheme} from 'react-jsonschema-form'
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
 import LayoutField   from '/node_modules/react-jsonschema-form-layout-grid'
  
@@ -74,6 +74,17 @@ const mySchema = {
 }
 
 
+const theme = { widgets: {test: () => (<div style={{backgroundColor:"red",}}>test</div>) } }
+
+const ThemedForm = withTheme(theme) 
+
+// const Demo = () => (
+//   <ThemedForm schema={schema} uiSchema={uiSchema} />
+// );
+
+   
+
+
 const Tpl = (props)=> {
 
 	const {id, label, required, children} = props;
@@ -114,7 +125,7 @@ const uiSchema = {
     //   'ui:field': 'customer', // associate the address section of schema with the address custom field
       'ui:field': 'layout_grid',
 	  //   "classNames": 'step information active ',
-	"classNames": '',
+	// "classNames": 'px-md-0 py-md-0',
 	
     'ui:layout_grid':{ 'ui:row': [
     { 'ui:col': { md: 12, children:
@@ -267,11 +278,13 @@ const BecomeAgentForm = ()=> {
 		<>
 		{/* <div className="col-md-offset-3 col-md-6">	 */}
 		{/* <div> */}
-            <Form 
+            {/* <Form  */}
+			<ThemedForm
             schema={mySchema}
             uiSchema={uiSchema}
-			// FieldTemplate={Tpl} 
-			// className="row"
+			// FieldTemplate={Tpl}
+			className= 'px-md-0 py-md-0'
+			style={{backgroundColor:"red",}}
 			fields={fields}
 			// onSubmit={onSubmit}
             >
@@ -280,7 +293,8 @@ const BecomeAgentForm = ()=> {
 			{/* <button type="button">Cancel</button> */}
 			</div>
       
-			</Form>	
+	        </ThemedForm>
+			{/* </Form>	 */}
 			
 		{/* </div>		 */}
         </>

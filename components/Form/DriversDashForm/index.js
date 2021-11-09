@@ -58,6 +58,14 @@ const mySchema = {
 				"Married"
 			  ]
 			},
+			"miles_year":{
+                "type": "string",
+                    "enum": [
+                      "50,000 K.M",
+                      "100,000 K.M",
+                      "200,000 K.M",
+                    ]
+            },
 			"home_rental_status": {
 			  "type": "string",
 			  "enum": [
@@ -191,36 +199,30 @@ const uiSchema = {
 	 [ 
 		{
 		'ui:row': [
-			{ 'ui:col': { md: 6, children: ['first_name'] } },
-			{ 'ui:col': { md: 6, children: ['last_name'] } },
+			{ 'ui:col': { md: 4, children: ['first_name'] } },
+			{ 'ui:col': { md: 4, children: ['last_name'] } },
+			{ 'ui:col': { md: 4, children: ['email_address'] } },
 				]
 			},
 		 
 		 { 'ui:row': [
-			{ 'ui:col': { md: 4, children: ['email_address'] } },
+			
 			{ 'ui:col': { md: 4, children: ['gender'] } },
 			{ 'ui:col': { md: 4, children: ['marital_status'] } },
-
+            { 'ui:col': { md: 4, children: ['home_rental_status'] } },
 			]
 			},
 		 {
 		'ui:row': [
-			{ 'ui:col': { md: 6, children: ['home_rental_status'] } },
-			{ 'ui:col': { md: 6, children: ['level_of_education'] } },
+			{ 'ui:col': { md: 6, children: ['miles_year'] } },
+			{ 'ui:col': { md: 6, children: ['miles_year'] } },
 				]
 			},
-		 {
+		  {
 		'ui:row': [
-			{ 'ui:col': { md: 6, children: ['has_auto_insurance'] } },
-			{ 'ui:col': { md: 6, children: ['accidents_convictions'] } },
-				]
-			},
-		 {
-		'ui:row': [
-			{ 'ui:col': { md: 12, children: ['another_driver_policy'] } }
+			{ 'ui:col': { md: 12, children: ['miles_year'] } },
 				]
 			},	
-			
 	 ]
   } },
   ] },
@@ -271,7 +273,7 @@ const uiSchema = {
 			"ui:options": {
 				label: false
           },
-         "classNames":"mt-md-4 ",
+         "classNames":" ",
         },
       
        "gender": {
@@ -297,7 +299,13 @@ const uiSchema = {
 		  },
 		 "classNames":"mt-md-4 form-select form-select-sm mb-3",
         },
-       
+		"miles_year": {
+			"ui:placeholder": "How many miles do you drive annualy?",
+            "classNames": "mt-md-4 form-select form-select-sm mb-3",
+			"ui:options": {
+				label: false
+            },
+        },
        "level_of_education": {
 		"ui:placeholder": "Level of Education",
 		"ui:options": {
@@ -337,7 +345,7 @@ const uiSchema = {
 
 
 
-const DriversForm = ()=> {
+const DriversDashForm = ()=> {
 
    const onSubmit = ({formData},e) =>{ e.preventDefault(); console.log("Data submitted: ",  formData)}	
 	  
@@ -367,4 +375,4 @@ const DriversForm = ()=> {
     )
 }
 
-export default DriversForm
+export default DriversDashForm

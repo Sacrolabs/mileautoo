@@ -254,7 +254,7 @@ const uiSchema = {
 	  },
    
 		  "street_address_1": {
-			"ui:placeholder": "Street Address 1",
+			"ui:placeholder": "Street Address",
 			"ui:options": {
 			label: false
 		  },
@@ -348,6 +348,7 @@ const CustomerForm = ()=> {
             uiSchema={uiSchema}
 			// FieldTemplate={Tpl} 
 			// className="row"
+			className= 'px-md-0 py-md-0'
 			fields={fields}
 			// onSubmit={onSubmit}
             >

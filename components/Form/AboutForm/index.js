@@ -174,11 +174,12 @@ const AboutForm = ()=> {
             uiSchema={uiSchema}
 			// FieldTemplate={Tpl} 
 			// className="row"
+			className= 'px-md-0 py-md-0'
 			fields={fields}
 			// onSubmit={onSubmit}
             >
 			<div className="d-flex align-items-center justify-content-center">
-			<button className="btn btn-success" type="submit">SEE MY SAVINGS</button>
+			<button style={{height:'45px', width:'350px'}} className="btn btn-success" type="submit">SEE MY SAVINGS</button>
 			{/* <button type="button">Cancel</button> */}
 			</div>
       

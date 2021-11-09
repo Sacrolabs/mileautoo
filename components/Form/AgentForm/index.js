@@ -55,12 +55,19 @@ const mySchema = {
 			"estimated_credit_score": {
                 "type": "string",
                 "title": "credit score",
+                
                 "enum": [
+                  "1",
+                  "2",
+                  "3",
+                  "4"
+                ],
+                "enumNames":[
                   "Excellent",
                   "Pretty Good",
                   "Just OK",
                   "Not Very Good"
-                ]
+                ],
               },
 
               "lease_own_finance": {
@@ -232,14 +239,7 @@ const uiSchema = {
 		"ui:options": {
 			label: false
 		  }, 
-          "ui:widget": (props) => {
-			return (
-			  <input 
-			    placeholder={props.placeholder}
-			    className="predefined"
-				 />
-			);
-		  }
+         
         },
           "gender": {
 		"ui:placeholder": "Gender",
@@ -361,14 +361,17 @@ const AgentForm = ()=> {
             uiSchema={uiSchema}
 			// FieldTemplate={Tpl} 
 			// className="row"
+      className= 'px-md-0 py-md-0'
 			fields={fields}
 			// onSubmit={onSubmit}
             >
 			<div className="d-flex align-items-center justify-content-center">
-			<button className="btn btn-success" type="submit">GET QUICK QUOTE</button>
+			<button style={{height:'50px', width:'380px',}} className="btn btn-success mt-md-5" type="submit">GET QUICK QUOTE</button>
 			{/* <button type="button">Cancel</button> */}
 			</div>
       
+
+
 			</Form>	
 			
 		{/* </div>		 */}

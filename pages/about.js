@@ -22,7 +22,7 @@ const About = ()=> {
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="./assets/css/about.css"/>
 
-    <div className="hero">
+    <section className="hero">
         <div className="wrapper">
             <div className="left">
                 <img src="./assets/images/about-hero.webp" alt="people-working"/>
@@ -34,9 +34,9 @@ const About = ()=> {
             </div>
         </div>
         <img className="bg" src="./assets/images/about-hero-bg.svg" alt="bg"/>
-    </div>
+    </section>
 
-    <div className="numbers">
+    <section className="numbers">
         <div className="wrapper">
             <div className="item-wrapper">
                 <div className="item">
@@ -63,7 +63,7 @@ const About = ()=> {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <div className="team">
         <div className="wrapper">
@@ -347,7 +347,7 @@ const About = ()=> {
         </div>
     </div>
 
-    <div className="footer-form">
+    <section className="footer-form">
         <div className="wrapper">
             <div className="left">
                 <h2>Are You Interested in <br/>Working at Mile Auto?</h2>
@@ -393,7 +393,7 @@ const About = ()=> {
             </div>
         </div>
         <img loading="lazy" className="bg" src="./assets/images/about-footer-bg.svg" alt="bg-footer-form"/>
-    </div>
+    </section>
     <script src="./assets/js/glider.min.js"></script>
     <script src="./assets/js/about.js"></script>
         </>

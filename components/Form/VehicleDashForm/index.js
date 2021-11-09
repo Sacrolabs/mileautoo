@@ -16,8 +16,8 @@ const vehicleSchema = {
             "prior_damage",
             "lease_own_finance",
             // "length_of_ownership",
-            "purpose",
-            "annual_mileage"
+            
+            "miles_year"
             ],
         
         "properties": {
@@ -60,7 +60,18 @@ const vehicleSchema = {
 			  "type": "string"
 			},
 			"prior_damage": {
-			  "type": "boolean"
+			  "type": "boolean",
+              "enumNames": [
+                  "Yes",
+                  "No"
+              ,],
+              "enum":[
+                  "1",
+                  "2",
+              ],
+			
+                // "title": "radio buttons",
+            "description": "Does this vehicle have existing damage?"
 			},
 			"lease_own_finance": {
 			  "type": "string",
@@ -85,14 +96,17 @@ const vehicleSchema = {
                 "one", "two", "three",
 				
 			  ],
-              "enumNames": [
-				  "Personal",
-                  "Business",
-			],
+              "enumNames": ["Personal",
+              "Business",],
 			},
-			"annual_mileage": {
-			  "type": "number"
-			},
+			"miles_year":{
+                "type": "string",
+                    "enum": [
+                      "50,000 K.M",
+                      "100,000 K.M",
+                      "200,000 K.M",
+                    ]
+            },
 			// "vin": {
 			//   "type": "string"
 			// },
@@ -152,13 +166,6 @@ const uiSchema = {
     { 'ui:col': { md: 12, children:
 	 [ 
          
-         {
-		'ui:row': [
-            { 'ui:col': { md: 8, children: ['choose_option_tag'] } },
-		
-			{ 'ui:col': { md: 4, children: ['choose_details'] } },
-				]
-			},
          
 		 { 'ui:row': [
 			{ 'ui:col': { md: 4, children: ['year'] } },
@@ -175,13 +182,13 @@ const uiSchema = {
 			},
          {
 		'ui:row': [
-			{ 'ui:col': { md: 6, children: ['lease_own_finance'] } },
-			{ 'ui:col': { md: 6, children: ['purpose'] } },
+			{ 'ui:col': { md: 6, children: ['miles_year'] } },
+			{ 'ui:col': { md: 6, children: ['miles_year'] } },
 				]
 			},
 		  {
 		'ui:row': [
-			{ 'ui:col': { md: 12, children: ['annual_mileage'] } },
+			{ 'ui:col': { md: 12, children: ['miles_year'] } },
 				]
 			},
 	 ]
@@ -240,13 +247,13 @@ const uiSchema = {
         },
         "purpose": {
 			"ui:placeholder": "What is your vehicle’s primary use?",
-			"classNames": "mt-md-4 form-select form-select-sm mb-3",
 			"ui:options": {
 				label: false
             },
         },
-       "annual_mileage": {
+       "miles_year": {
 			"ui:placeholder": "How many miles do you drive annualy?",
+            "classNames": "mt-md-4 form-select form-select-sm mb-3",
 			"ui:options": {
 				label: false
             },
@@ -259,17 +266,14 @@ const uiSchema = {
            "classNames": "",
               "ui:widget": (props) => {
 			return (
-			//   <input 
-			//     placeholder={props.placeholder}
-			//     className="predefined"
+			  <input 
+			    placeholder={props.placeholder}
+			    className="predefined"
 			    // type="text"
 				// value={props.value}
 				// required={props.required}
 				// onChange={(event) => props.onChange(event.target.value)}
-				//  />
-				<div>
-					You can choose to enter your vehicle details as per the two options below. Feel free to choose either one!
-				</div>
+				 />
 			);
 		  },
 			}
@@ -279,7 +283,7 @@ const uiSchema = {
 
 
 
-const VehicleForm = ()=> { 
+const VehicleDashForm = ()=> { 
 
     return (
 		<>
@@ -288,18 +292,25 @@ const VehicleForm = ()=> {
             uiSchema={uiSchema}
 			FieldTemplate={Tpl} 
 			// className="row"
-			className= 'px-md-0 py-md-0'
+            className= 'px-md-0 py-md-0'
 			fields={fields}
 			// onSubmit={onSubmit}
             onChange={console.log("changed")}
 			onSubmit={console.log("submitted")}
 		    onError={console.log("errors")}
             >
-			<div>
-			{/* <button type="submit">Submit</button>
-			<button type="button">Cancel</button> */}
+			<div className="row" style={{}}>
+			
+            <div className="d-flex col-md-6 align-items-center justify-content-center">
+            <button className="btn" style={{height:'45px', width:'350px', borderRadius:"5px", borderColor:'#2A8854', color:'#2A8854', borderStyle:"solid", borderWidth:"0.15rem"}} type="button">Cancel</button>
+            </div>
+
+			<div className="d-flex col-md-6 align-items-center justify-content-center">
+            <button className="btn btn-success" style={{height:'45px', width:'350px'}} type="button">Add</button>
 			</div>
-      
+           
+            </div>
+
 			</Form>	
 			
 		{/* </div>		 */}
@@ -307,4 +318,4 @@ const VehicleForm = ()=> {
     )
 }
 
-export default VehicleForm
+export default VehicleDashForm
