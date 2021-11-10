@@ -4,7 +4,7 @@ import LoginForm from '../components/Form/LoginForm'
 const Login = ()=> {
     return (
         <>
-        <meta charset="UTF-8"/>
+        <meta charSet="UTF-8"/>
     <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Login</title>

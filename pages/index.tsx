@@ -3,6 +3,7 @@
 // import styles from '../styles/Home.module.css'
 
 // import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
+import * as React from 'react'
 
 import IndexForm from "../components/Form/IndexFrom"
 

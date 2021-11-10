@@ -1,7 +1,7 @@
 import React from 'react'
 import Form from 'react-jsonschema-form'
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
-import LayoutField   from '/node_modules/react-jsonschema-form-layout-grid'
+import LayoutField   from 'react-jsonschema-form-layout-grid'
  
 const mySchema = {
 //   "title": "QuoteRequest",
@@ -12,16 +12,13 @@ const mySchema = {
 		"": {
 		"type": "object",
 		"required": [
-            "email",
-            "password"
+            "phone_number",
 		],
 		"properties": {
-			"email": {
-			  "type": "string"
+			"phone_number": {
+			  "type": "number"
 			},
-			"password": {
-                "type": "string"
-              },
+			
         }
 	  }
    }
@@ -91,12 +88,7 @@ const uiSchema = {
 	 [ 
 	
 		{ 'ui:row': [
-			{ 'ui:col': { md: 12, children: ['email'] } },
-
-			]
-			},
-        { 'ui:row': [
-			{ 'ui:col': { md: 12, children: ['password'] } },
+			{ 'ui:col': { md: 12, children: ['phone_number'] } },
 
 			]
 			},
@@ -105,8 +97,8 @@ const uiSchema = {
   } },
   ] },
   
-      "email": {
-		"ui:placeholder": "Email",
+      "phone_number": {
+		"ui:placeholder": "Phone number",
 		"classNames": "",
 		"ui:options": {
 			label: false
@@ -120,21 +112,7 @@ const uiSchema = {
 			);
 		  }
       },
-      "password": {
-		"ui:placeholder": "Password",
-		"classNames": "",
-		"ui:options": {
-			label: false
-		  }, 
-          "ui:widget": (props) => {
-			return (
-			  <input 
-			    placeholder={props.placeholder}
-			    className=""
-				 />
-			);
-		  }
-      },
+	    
         
 		},
   
@@ -143,7 +121,7 @@ const uiSchema = {
 
 
 
-const LoginForm = ()=> {
+const MagicForm = ()=> {
 
    const onSubmit = ({formData},e) =>{ e.preventDefault(); console.log("Data submitted: ",  formData)}	
 	  
@@ -161,27 +139,11 @@ const LoginForm = ()=> {
 			fields={fields}
 			// onSubmit={onSubmit}
             >
-
-                <div className="extra-controls">
-                    <div className="checkbox-with-label">
-                        <div className="checkbox-wrap">
-                            <input type="checkbox" id="remain-logged-in" name="remain-logged-in"/>
-                        </div>
-                        <label for="remain-logged-in">Remain logged in</label>
-                    </div>
-                    <a href="#">Change or Reset Password</a>
-                </div>
-                
-                
-
 			<div className="d-flex align-items-center justify-content-center mt-md-4">
-			<button style={{height:'45px', width:'350px'}}  className="btn btn-success" type="submit">Login</button>
+			<button style={{height:'45px', width:'350px'}}  className="btn btn-success" type="submit">GET QUICK QUOTE</button>
 			{/* <button type="button">Cancel</button> */}
 			</div>
       
-            <p className="other-variant">or <br/> <a className="i-icon" href="#">Log In Without Password</a> </p>
-         
-
 			</Form>	
 			
 		{/* </div>		 */}
@@ -189,4 +151,4 @@ const LoginForm = ()=> {
     )
 }
 
-export default LoginForm
+export default MagicForm

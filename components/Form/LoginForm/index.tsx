@@ -1,8 +1,10 @@
 import React from 'react'
-import Form from 'react-jsonschema-form'
+// import Form from 'react-jsonschema-form'
+import Form from '@rjsf/bootstrap-4'
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
-import LayoutField   from '/node_modules/react-jsonschema-form-layout-grid'
- 
+import LayoutField   from 'react-jsonschema-form-layout-grid'
+
+
 const mySchema = {
 //   "title": "QuoteRequest",
 	"type": "object",
@@ -12,13 +14,20 @@ const mySchema = {
 		"": {
 		"type": "object",
 		"required": [
-            "phone_number",
+            "email",
+            "password"
 		],
 		"properties": {
-			"phone_number": {
-			  "type": "number"
+			"email": {
+			  "type": "string",
+			  "title": "Email",
+			  "format": "email",
 			},
-			
+			"password": {
+                "type": "string",
+				"title": "Password",
+				"format": "password",
+              },
         }
 	  }
    }
@@ -88,7 +97,12 @@ const uiSchema = {
 	 [ 
 	
 		{ 'ui:row': [
-			{ 'ui:col': { md: 12, children: ['phone_number'] } },
+			{ 'ui:col': { md: 12, children: ['email'] } },
+
+			]
+			},
+        { 'ui:row': [
+			{ 'ui:col': { md: 12, children: ['password'] } },
 
 			]
 			},
@@ -97,8 +111,8 @@ const uiSchema = {
   } },
   ] },
   
-      "phone_number": {
-		"ui:placeholder": "Phone number",
+      "email": {
+		"ui:placeholder": "Email",
 		"classNames": "",
 		"ui:options": {
 			label: false
@@ -112,7 +126,21 @@ const uiSchema = {
 			);
 		  }
       },
-	    
+      "password": {
+		"ui:placeholder": "Password",
+		"classNames": "",
+		"ui:options": {
+			label: false
+		  }, 
+          "ui:widget": (props) => {
+			return (
+			  <input 
+			    placeholder={props.placeholder}
+			    className=""
+				 />
+			);
+		  }
+      },
         
 		},
   
@@ -121,7 +149,7 @@ const uiSchema = {
 
 
 
-const MagicForm = ()=> {
+const LoginForm = ()=> {
 
    const onSubmit = ({formData},e) =>{ e.preventDefault(); console.log("Data submitted: ",  formData)}	
 	  
@@ -139,11 +167,27 @@ const MagicForm = ()=> {
 			fields={fields}
 			// onSubmit={onSubmit}
             >
+
+                <div className="extra-controls">
+                    <div className="checkbox-with-label">
+                        <div className="checkbox-wrap">
+                            <input type="checkbox" id="remain-logged-in" name="remain-logged-in"/>
+                        </div>
+                        <label for="remain-logged-in">Remain logged in</label>
+                    </div>
+                    <a href="#">Change or Reset Password</a>
+                </div>
+                
+                
+
 			<div className="d-flex align-items-center justify-content-center mt-md-4">
-			<button style={{height:'45px', width:'350px'}}  className="btn btn-success" type="submit">GET QUICK QUOTE</button>
+			<button style={{height:'45px', width:'350px'}}  className="btn btn-success" type="submit">Login</button>
 			{/* <button type="button">Cancel</button> */}
 			</div>
       
+            <p className="other-variant">or <br/> <a className="i-icon" href="#">Log In Without Password</a> </p>
+         
+
 			</Form>	
 			
 		{/* </div>		 */}
@@ -151,4 +195,4 @@ const MagicForm = ()=> {
     )
 }
 
-export default MagicForm
+export default LoginForm

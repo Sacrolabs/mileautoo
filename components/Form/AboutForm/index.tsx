@@ -1,7 +1,7 @@
 import React from 'react'
 import Form from 'react-jsonschema-form'
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
-import LayoutField   from '/node_modules/react-jsonschema-form-layout-grid'
+import LayoutField   from 'react-jsonschema-form-layout-grid'
  
 const mySchema = {
 //   "title": "QuoteRequest",
@@ -12,34 +12,35 @@ const mySchema = {
 		"": {
 		"type": "object",
 		"required": [
-            "",
-            ""
+		 "full_name",
+		"phone_number",
+		"email_address",
+        "open_position",
+			
 		],
 		"properties": {
-			"license_state": {
-                "type": "string",
-                "enum": [
-                  "Demo 1",
-                  "Demo 2",
-                  "Demo 3",
-                ]
+            
+		  
+			"full_name": {
+			  "type": "string"
 			},
-			"license_status": {
-                "type": "string",
-                "enum": [
-                  "Demo 1",
-                  "Demo 2",
-                  "Demo 3",
-                ]
+			"email_address": {
+			  "type": "string"
+            },
+            "phone_number": {
+			  "type": "number"
+            },
+			"open_position": {
+			  "type": "string",
+			  "enum": [
+				"Graphic Designer",
+				"CEO",
+                "Creative Director",
+                "Marketing Manager",
+                "Project Manager",
+			  ]
 			},
-            "license_number": {
-                "type": "number",
-                "enum": [
-                  "1",
-                  "2",
-                  "3",
-                ]
-			},
+			
         }
 	  }
    }
@@ -93,61 +94,64 @@ const uiSchema = {
       'ui:field': 'layout_grid',
 	  //   "classNames": 'step information active ',
 	"classNames": '',
-    // "zip_code",
-    // "date_of_birth",
-    // "gender",
-    // "marital_status",
-    // "estimated_credit_score",
-    // "lease_own_finance",
-    // "owned_year",
-    // "make",
-    // "has_auto_insurance",
-    // "agent_code",
-    
+	
     'ui:layout_grid':{ 'ui:row': [
     { 'ui:col': { md: 12, children:
 	 [ 
 	
-		{ 'ui:row': [
-			{ 'ui:col': { md: 12, children: ['license_state'] } },
-
-			]
-			},
-        { 'ui:row': [
-			{ 'ui:col': { md: 12, children: ['license_status'] } },
-
-			]
-			},
-        { 'ui:row': [
-			{ 'ui:col': { md: 12, children: ['license_number'] } },
-
-			]
-			},
+		 {
+		'ui:row': [
+			{ 'ui:col': { md: 12, children: ['full_name'] } }
+				]
+			},	
+			 {
+		'ui:row': [
+			{ 'ui:col': { md: 12, children: ['email_address'] } }
+				]
+            },
+         {
+		'ui:row': [
+			{ 'ui:col': { md: 12, children: ['phone_number'] } }
+				]
+            },
+         {
+		'ui:row': [
+			{ 'ui:col': { md: 12, children: ['open_position'] } }
+				]
+            },
+         
 	 ]
   } },
   ] },
   
-      "license_state": {
-			"ui:placeholder": "License State",
-            "classNames": "mt-md-4 form-select form-select-sm mb-3",
-			"ui:options": {
-				label: false
-            },
+      "full_name": {
+		"ui:placeholder": "Full Name",
+		"classNames": "",
+		"ui:options": {
+			label: false
+		  }, 
+      },
+	    "email_address": {
+		"ui:placeholder": "Email",
+		"classNames": "",
+		"ui:options": {
+			label: false
+		  }, 
         },
-        "license_status": {
-			"ui:placeholder": "License Status",
-            "classNames": "mt-md-4 form-select form-select-sm mb-3",
-			"ui:options": {
-				label: false
-            },
+          "phone_number": {
+		"ui:placeholder": "Phone",
+		"classNames": "",
+		"ui:options": {
+			label: false
+		  }, 
         },
-        "license_number": {
-			"ui:placeholder": "License Number",
-            "classNames": "mt-md-4 form-select form-select-sm mb-3",
-			"ui:options": {
-				label: false
-            },
-        },
+            "open_position": {
+		"ui:placeholder": "Select Open Positions",
+		"classNames": "mt-md-4 form-select form-select-sm mb-3",
+		"ui:options": {
+			label: false
+		  }, 
+      },
         
 		},
   
@@ -156,7 +160,7 @@ const uiSchema = {
 
 
 
-const PurchaseForm = ()=> {
+const AboutForm = ()=> {
 
    const onSubmit = ({formData},e) =>{ e.preventDefault(); console.log("Data submitted: ",  formData)}	
 	  
@@ -170,16 +174,15 @@ const PurchaseForm = ()=> {
             uiSchema={uiSchema}
 			// FieldTemplate={Tpl} 
 			// className="row"
-            className= 'px-md-0 py-md-0'
+			className= 'px-md-0 py-md-0'
 			fields={fields}
-            
 			// onSubmit={onSubmit}
             >
-
-            <div/>    
-
-    
-
+			<div className="d-flex align-items-center justify-content-center">
+			<button style={{height:'45px', width:'350px'}} className="btn btn-success" type="submit">SEE MY SAVINGS</button>
+			{/* <button type="button">Cancel</button> */}
+			</div>
+      
 			</Form>	
 			
 		{/* </div>		 */}
@@ -187,4 +190,4 @@ const PurchaseForm = ()=> {
     )
 }
 
-export default PurchaseForm
+export default AboutForm

@@ -1,7 +1,7 @@
 import React from 'react'
 import Form from 'react-jsonschema-form'
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
-import LayoutField   from '/node_modules/react-jsonschema-form-layout-grid'
+import LayoutField   from 'react-jsonschema-form-layout-grid'
  
 const mySchema = {
 //   "title": "QuoteRequest",

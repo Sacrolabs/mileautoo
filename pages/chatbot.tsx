@@ -3,7 +3,7 @@ import React from 'react'
 const Chatbot = ()=> {
     return (
         <>
-         <meta charset="UTF-8"/>
+         <meta charSet="UTF-8"/>
             <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <title>Chat Bot Page</title>

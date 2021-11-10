@@ -1,7 +1,7 @@
 import React from 'react'
 import Form from 'react-jsonschema-form'
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
-import LayoutField   from '/node_modules/react-jsonschema-form-layout-grid'
+import LayoutField   from 'react-jsonschema-form-layout-grid'
  
 const mySchema = {
 //   "title": "QuoteRequest",
@@ -12,31 +12,38 @@ const mySchema = {
 		"": {
 		"type": "object",
 		"required": [
-		    "date_of_birth",
+            "zip_code",
+            "date_of_birth",
             "gender",
             "marital_status",
             "estimated_credit_score",
             "lease_own_finance",
+            "annual_mileage",
             "owned_year",
-            "car_make",
-            "car_model",
+            "make",
+            "annual_mileage",
             "has_auto_insurance",
-            "agent_code",
 		],
 		"properties": {
-            "date_of_birth": {
+            
+		  
+			"zip_code": {
+			  "type": "number"
+			},
+			"date_of_birth": {
                 "type": "string",
                 'title': 'Date',
                 'format': 'date',
                 // 'format': 'date-time',
               },
-            "gender": {
+              "gender": {
                 "type": "string",
                 "enum": [
                     "Male",
                     "Female"
                   ]
               },
+              
               "marital_status": {
                 "type": "string",
                 "enum": [
@@ -48,13 +55,21 @@ const mySchema = {
 			"estimated_credit_score": {
                 "type": "string",
                 "title": "credit score",
+                
                 "enum": [
+                  "1",
+                  "2",
+                  "3",
+                  "4"
+                ],
+                "enumNames":[
                   "Excellent",
                   "Pretty Good",
                   "Just OK",
                   "Not Very Good"
-                ]
+                ],
               },
+
               "lease_own_finance": {
                 "type": "string",
                 "enum": [
@@ -63,17 +78,23 @@ const mySchema = {
                   "Owned"
                 ]
               },
+
+              "annual_mileage": {
+                "type": "number"
+              },
               "owned_year": {
                 "type": "string",
                 'title': 'Date',
                 'format': 'date',
               },
+              
               "car_make": {
                 "type": "string"
               },
               "car_model": {
                 "type": "string"
               },
+              
               "has_auto_insurance": {
                 "type": "string",
                 "enum": [
@@ -86,8 +107,8 @@ const mySchema = {
               "agent_code": {
                 "type": "number"
               },
-             
-		}
+              
+        }
 	  }
    }
 }
@@ -140,118 +161,154 @@ const uiSchema = {
       'ui:field': 'layout_grid',
 	  //   "classNames": 'step information active ',
 	"classNames": '',
-	// "date_of_birth",
-    //         "gender",
-    //         "marital_status",
-    //         "estimated_credit_score",
-            
+    // "zip_code",
+    // "date_of_birth",
+    // "gender",
+    // "marital_status",
+    // "estimated_credit_score",
+    // "lease_own_finance",
+    // "owned_year",
+    // "make",
+    // "has_auto_insurance",
+    // "agent_code",
+    
     'ui:layout_grid':{ 'ui:row': [
     { 'ui:col': { md: 12, children:
 	 [ 
-		{
+	
+		{ 'ui:row': [
+			{ 'ui:col': { md: 4, children: ['zip_code'] } },
+			{ 'ui:col': { md: 4, children: ['date_of_birth'] } },
+			{ 'ui:col': { md: 4, children: ['gender'] } },
+
+			]
+			},
+        {
 		'ui:row': [
-			{ 'ui:col': { md: 6, children: ['date_of_birth'] } },
-			{ 'ui:col': { md: 6, children: ['gender'] } },
+			{ 'ui:col': { md: 4, children: ['marital_status'] } },
+			{ 'ui:col': { md: 8, children: ['estimated_credit_score'] } },
 				]
 			},
-		 
-		 { 'ui:row': [
-			{ 'ui:col': { md: 6, children: ['marital_status'] } },
-			{ 'ui:col': { md: 6, children: ['estimated_credit_score'] } },
-
-			]
-			},
-        
-		 { 'ui:row': [
-			{ 'ui:col': { md: 6, children: ['lease_own_finance'] } },
+          {
+		'ui:row': [
+			{ 'ui:col': { md: 12, children: ['lease_own_finance'] } }
+				]
+			},	
+		  {
+		'ui:row': [
+			{ 'ui:col': { md: 6, children: ['annual_mileage'] } },
 			{ 'ui:col': { md: 6, children: ['owned_year'] } },
-
-			]
-			},
-         
-		 { 'ui:row': [
+				]
+			}, 
+               {
+		'ui:row': [
 			{ 'ui:col': { md: 6, children: ['car_make'] } },
 			{ 'ui:col': { md: 6, children: ['car_model'] } },
-
-			]
-			},
-            
-         
-            {
-                'ui:row': [
-                    { 'ui:col': { md: 6, children: ['has_auto_insurance'] } },
-                    { 'ui:col': { md: 6, children: ['agent_code'] } },
-                        ]
-                    }, 
-                 
-		 	
+				]
+			}, 
+		
+		   {
+		'ui:row': [
+			{ 'ui:col': { md: 6, children: ['has_auto_insurance'] } },
+			{ 'ui:col': { md: 6, children: ['agent_code'] } },
+				]
+			}, 
+		
 	 ]
   } },
   ] },
-  // "first_name",
-  // "last_name",
-  // "email",
-  // "agency_name",
-  // "mobile_phone_number",
-  // "state",
-  // "hear_about",
-  // "comparative_rate",
-
-
-  "date_of_birth": {
-    "ui:placeholder": "Date of Birth",
-    "classNames": "",
-    "ui:options": {
-        label: false
-      }, 
-      
-    },
-      "gender": {
-    "ui:placeholder": "Gender",
-    "classNames": "mt-md-4 form-select form-select-sm mb-3 predefined",
-    "ui:options": {
-        label: false
-      }, 
-    //   "ui:widget": (props) => {
-    // 	return (
-    // 	  <select 
-    // 	    placeholder={props.placeholder}
-    // 	    className="predefined"
-    //         id="root__gender"
-    // 		 >
-    //              <option className="predefined">{props.children}</option>
-    //          </select>
-    // 	);
-    //   }
-    },
-        "marital_status": {
-    "ui:placeholder": "Marital Status",
-    "classNames": "mt-md-4 form-select form-select-sm mb-3",
-    "ui:options": {
-        label: false
-      }, 
-  },
-  "estimated_credit_score": {
-    "ui:placeholder": "How is your credit?",
-    "classNames": "mt-md-4 form-select form-select-sm mb-3",
-    "ui:options": {
-        label: false
+  
+      "zip_code": {
+		"ui:placeholder": "Zip Code",
+		"classNames": "",
+		"ui:options": {
+			label: false
+		  }, 
+          "ui:widget": (props) => {
+			return (
+			  <input 
+			    placeholder={props.placeholder}
+			    className="predefined"
+				 />
+			);
+		  }
       },
-    },
-    "lease_own_finance": {
-        "ui:placeholder": "Is your car owned, leased, financial?",
+	    "date_of_birth": {
+		"ui:placeholder": "Date of Birth",
+		"classNames": "",
+		"ui:options": {
+			label: false
+		  }, 
+         
+        },
+          "gender": {
+		"ui:placeholder": "Gender",
+		"classNames": "mt-md-4 form-select form-select-sm mb-3 predefined",
+		"ui:options": {
+			label: false
+		  }, 
+        //   "ui:widget": (props) => {
+		// 	return (
+		// 	  <select 
+		// 	    placeholder={props.placeholder}
+		// 	    className="predefined"
+        //         id="root__gender"
+		// 		 >
+        //              <option className="predefined">{props.children}</option>
+        //          </select>
+		// 	);
+		//   }
+        },
+            "marital_status": {
+		"ui:placeholder": "Marital Status",
+		"classNames": "mt-md-4 form-select form-select-sm mb-3",
+		"ui:options": {
+			label: false
+		  }, 
+      },
+      "estimated_credit_score": {
+        "ui:placeholder": "How is your credit?",
         "classNames": "mt-md-4 form-select form-select-sm mb-3",
         "ui:options": {
             label: false
           },
         },
-        "owned_year": {
-            "ui:placeholder": "What year is your car?",
-            "classNames": "",
+
+        "lease_own_finance": {
+            "ui:placeholder": "Is your car owned, leased, financial?",
+            "classNames": "mt-md-4 form-select form-select-sm mb-3",
             "ui:options": {
                 label: false
-              }, 
+              },
             },
+
+            "annual_mileage":{
+                "ui:placeholder": "Annual Mileage",
+                "classNames": "",
+                "ui:options": {
+                    label: false
+                  },
+                  "ui:widget": (props) => {
+                    return (
+                      <input 
+                        placeholder={props.placeholder}
+                        className="input-error"
+                        // type="text"
+                        // value={props.value}
+                        // required={props.required}
+                        // onChange={(event) => props.onChange(event.target.value)}
+                         />
+                    );
+                  } 
+            },
+            "owned_year": {
+                "ui:placeholder": "What year is your car?",
+                "classNames": "",
+                "ui:options": {
+                    label: false
+                  }, 
+                },
+            
             "car_make": {
                 "ui:placeholder": "What is your car’s make?",
                 "classNames": "mt-md-4",
@@ -266,31 +323,31 @@ const uiSchema = {
                     label: false
                   }, 
                 },
-                "has_auto_insurance":{
-                    "ui:placeholder": "Do you currently have insurance?",
-                    "classNames": "mt-md-4 form-select form-select-sm mb-3",
-                    "ui:options": {
-                        label: false
-                      },
-                   
-                 },
-                 "agent_code":{
-                    "ui:placeholder": "Agent code (Optional)",
-                    "classNames": "mt-md-4",
-                    "ui:options": {
-                        label: false
-                      },
-                 },
-    
-     	
- },
+             "has_auto_insurance":{
+                "ui:placeholder": "Do you currently have insurance?",
+                "classNames": "mt-md-4 form-select form-select-sm mb-3",
+                "ui:options": {
+                    label: false
+                  },
+               
+             },
+             "agent_code":{
+                "ui:placeholder": "Agent code (Optional)",
+                "classNames": "mt-md-4",
+                "ui:options": {
+                    label: false
+                  },
+             },
+
+        
+		},
   
 
 }
 
 
 
-const SaveForm = ()=> {
+const AgentForm = ()=> {
 
    const onSubmit = ({formData},e) =>{ e.preventDefault(); console.log("Data submitted: ",  formData)}	
 	  
@@ -308,11 +365,13 @@ const SaveForm = ()=> {
 			fields={fields}
 			// onSubmit={onSubmit}
             >
-			<div className="d-flex align-items-center justify-content-center mt-md-4">
-			<button  style={{height:'45px', width:'350px'}}  className="btn btn-success" type="submit">GET QUICK QUOTE</button>
+			<div className="d-flex align-items-center justify-content-center">
+			<button style={{height:'50px', width:'380px',}} className="btn btn-success mt-md-5" type="submit">GET QUICK QUOTE</button>
 			{/* <button type="button">Cancel</button> */}
 			</div>
       
+
+
 			</Form>	
 			
 		{/* </div>		 */}
@@ -320,4 +379,4 @@ const SaveForm = ()=> {
     )
 }
 
-export default SaveForm
+export default AgentForm
