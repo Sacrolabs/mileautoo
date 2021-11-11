@@ -4,11 +4,8 @@ import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
 import LayoutField   from 'react-jsonschema-form-layout-grid'
  
 const mySchema = {
-//   "title": "QuoteRequest",
 	"type": "object",
-	// "examples": [],
 	"properties": {
-	//   "customer": {
 		"": {
 		"type": "object",
 		"required": [
@@ -49,7 +46,6 @@ const mySchema = {
 
   const fields = {
   layout_grid: LayoutField ,
-//   TitleField: TitleField
 }
 
 
@@ -62,14 +58,7 @@ const Tpl = (props)=> {
 	console.log("Childern:",children)
 
 	console.log("Props:",props)
-	// const elementClass = (id =="") ? "wanted_class_name" : ""
 
-	// const elementClass = (id =="root__estimated_credit_score") ? "options pretty-select" : "props.className"
-    // custom-select
-	// const elementClass = (id =="root__estimated_credit_score") ? "options" : `${props.classNames}`
-
-	// const elementClass = (id == "root__estimated_credit_score") ? "custom-select" : `${props.classNames}`
-	
 	return (
 	  <div className="form-group">
 	 {/* <div className={`${elementClass}`}> */}
@@ -88,11 +77,8 @@ const Tpl = (props)=> {
 
 const uiSchema = {
 	"ui:FieldTemplate": Tpl,
-    // name: { 'ui:title': 'Full Name' },
     "": {
-    //   'ui:field': 'customer', // associate the address section of schema with the address custom field
       'ui:field': 'layout_grid',
-	  //   "classNames": 'step information active ',
 	"classNames": '',
 	
     'ui:layout_grid':{ 'ui:row': [
@@ -164,28 +150,21 @@ const AboutForm = ()=> {
 
    const onSubmit = ({formData},e) =>{ e.preventDefault(); console.log("Data submitted: ",  formData)}	
 	  
-
     return (
 		<>
-		{/* <div className="col-md-offset-3 col-md-6">	 */}
-		{/* <div> */}
+		
             <Form 
             schema={mySchema}
             uiSchema={uiSchema}
-			// FieldTemplate={Tpl} 
-			// className="row"
+			
 			className= 'px-md-0 py-md-0'
 			fields={fields}
-			// onSubmit={onSubmit}
+		
             >
-			<div className="d-flex align-items-center justify-content-center">
+			<div className="mt-md-4 d-flex align-items-center justify-content-center">
 			<button style={{height:'45px', width:'350px'}} className="btn btn-success" type="submit">SEE MY SAVINGS</button>
-			{/* <button type="button">Cancel</button> */}
 			</div>
-      
 			</Form>	
-			
-		{/* </div>		 */}
         </>
     )
 }
