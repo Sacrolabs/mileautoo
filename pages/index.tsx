@@ -6,6 +6,7 @@
 import * as React from 'react'
 
 import IndexForm from "../components/Form/IndexFrom"
+import MultiForm from "../components/Form/MultiFrom"
 
 import Slider from 'react-slick'
 
@@ -72,7 +73,8 @@ const Home = ()=> {
             <div className="home-form">
                 <h2>How much can I save with Mile Auto?</h2>
 
-                 <IndexForm/>
+                 {/* <IndexForm/> */}
+                 <MultiForm/>
 
                 {/* <form action="" method="post">
                     <input type="number" name="zip" placeholder="Zip Code" required/>

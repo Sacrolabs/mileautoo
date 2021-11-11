@@ -297,7 +297,7 @@ const BecomeAgentForm = ()=> {
 			// FieldTemplate={Tpl}
 			className= 'px-md-0 py-md-0'
 			style={{backgroundColor:"red",}}
-			// fields={fields}
+			fields={fields}
 			onSubmit={handleSubmit}
 			onChange={handleChange}
 			liveValidate
