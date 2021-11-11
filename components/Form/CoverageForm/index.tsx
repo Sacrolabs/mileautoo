@@ -203,7 +203,7 @@ const uiSchema = {
 			label: false
 		  },
 		//   "classNames":"screen input-error mt-md-3 form-select",
-		 "classNames":"form-select form-select-sm mb-3",
+		 "classNames":"",
         
         },
       
@@ -213,7 +213,7 @@ const uiSchema = {
             label: false
           },
           //   "classNames":"screen input-error mt-md-3 form-select",
-          "classNames":"form-select form-select-sm mb-3", 
+          "classNames":"", 
         },
       
        "underinsured_motorist": {
@@ -222,7 +222,7 @@ const uiSchema = {
                 label: false
             },
             //   "classNames":"screen input-error mt-md-3 form-select",
-            "classNames":"mt-md-4 form-select form-select-sm mb-3",
+            "classNames":"mt-md-4 ",
             
         },
       
@@ -232,7 +232,7 @@ const uiSchema = {
                 label: false
             },
             //   "classNames":"screen input-error mt-md-3 form-select",
-            "classNames":"mt-md-4 form-select form-select-sm mb-3",
+            "classNames":"mt-md-4 ",
             
         },
 
@@ -242,7 +242,7 @@ const uiSchema = {
                 label: false
             },
             //   "classNames":"screen input-error mt-md-3 form-select",
-            "classNames":"mt-md-4 form-select form-select-sm mb-3",
+            "classNames":"mt-md-4 ",
             
         },
 
@@ -252,7 +252,7 @@ const uiSchema = {
                 label: false
             },
             //   "classNames":"screen input-error mt-md-3 form-select",
-            "classNames":"mt-md-4 form-select form-select-sm mb-3",
+            "classNames":"mt-md-4 ",
             
         },
 
@@ -262,7 +262,7 @@ const uiSchema = {
                 label: false
             },
             //   "classNames":"screen input-error mt-md-3 form-select",
-            "classNames":"mt-md-4 form-select form-select-sm mb-3",
+            "classNames":"mt-md-4 ",
             
         },
 

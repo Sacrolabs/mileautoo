@@ -223,7 +223,7 @@ const uiSchema = {
 			label: false
 		  },
 		//   "classNames":"screen input-error mt-md-3 form-select",
-		 "classNames":"mt-md-4 form-select form-select-sm mb-3",
+		 "classNames":"mt-md-4 ",
         //   "ui:widget": (props) => {
 		// 	return (
 		// 	  <select 

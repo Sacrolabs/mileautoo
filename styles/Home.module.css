@@ -114,3 +114,6 @@
     flex-direction: column;
   }
 }
+.dropdwn {
+  min-height: 50px !important;
+}

@@ -240,7 +240,7 @@ const uiSchema = {
         },
         "purpose": {
 			"ui:placeholder": "What is your vehicle’s primary use?",
-			"classNames": "mt-md-4 form-select form-select-sm mb-3",
+			"classNames": "mt-md-4 ",
 			"ui:options": {
 				label: false
             },

@@ -208,7 +208,7 @@ const uiSchema = {
     },
       "gender": {
     "ui:placeholder": "Gender",
-    "classNames": "mt-md-4 form-select form-select-sm mb-3 predefined",
+    "classNames": "mt-md-4  predefined",
     "ui:options": {
         label: false
       }, 
@@ -226,21 +226,21 @@ const uiSchema = {
     },
         "marital_status": {
     "ui:placeholder": "Marital Status",
-    "classNames": "mt-md-4 form-select form-select-sm mb-3",
+    "classNames": "mt-md-4 ",
     "ui:options": {
         label: false
       }, 
   },
   "estimated_credit_score": {
     "ui:placeholder": "How is your credit?",
-    "classNames": "mt-md-4 form-select form-select-sm mb-3",
+    "classNames": "mt-md-4 ",
     "ui:options": {
         label: false
       },
     },
     "lease_own_finance": {
         "ui:placeholder": "Is your car owned, leased, financial?",
-        "classNames": "mt-md-4 form-select form-select-sm mb-3",
+        "classNames": "mt-md-4 ",
         "ui:options": {
             label: false
           },
@@ -268,7 +268,7 @@ const uiSchema = {
                 },
                 "has_auto_insurance":{
                     "ui:placeholder": "Do you currently have insurance?",
-                    "classNames": "mt-md-4 form-select form-select-sm mb-3",
+                    "classNames": "mt-md-4 ",
                     "ui:options": {
                         label: false
                       },

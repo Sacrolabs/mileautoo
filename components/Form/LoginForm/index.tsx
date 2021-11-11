@@ -1,6 +1,6 @@
 import React from 'react'
-// import Form from 'react-jsonschema-form'
-import Form from '@rjsf/bootstrap-4'
+import Form from 'react-jsonschema-form'
+// import Form from '@rjsf/bootstrap-4'
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
 import LayoutField   from 'react-jsonschema-form-layout-grid'
 
@@ -113,33 +113,36 @@ const uiSchema = {
   
       "email": {
 		"ui:placeholder": "Email",
+		"ui:widget": "email",
+		"ui:autofocus": true,
 		"classNames": "",
 		"ui:options": {
 			label: false
 		  }, 
-          "ui:widget": (props) => {
-			return (
-			  <input 
-			    placeholder={props.placeholder}
-			    className=""
-				 />
-			);
-		  }
+        //   "ui:widget": (props) => {
+		// 	return (
+		// 	  <input 
+		// 	    placeholder={props.placeholder}
+		// 	    className=""
+		// 		 />
+		// 	);
+		//   }
       },
       "password": {
 		"ui:placeholder": "Password",
+		"ui:widget": "password",
 		"classNames": "",
 		"ui:options": {
 			label: false
 		  }, 
-          "ui:widget": (props) => {
-			return (
-			  <input 
-			    placeholder={props.placeholder}
-			    className=""
-				 />
-			);
-		  }
+        //   "ui:widget": (props) => {
+		// 	return (
+		// 	  <input 
+		// 	    placeholder={props.placeholder}
+		// 	    className=""
+		// 		 />
+		// 	);
+		//   }
       },
         
 		},

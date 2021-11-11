@@ -150,7 +150,13 @@ const Tpl = (props)=> {
 	)
   }
 
-
+  const validate = (formData, errors)=> {
+    if (formData.zip_code == null) {
+      errors.pass2.addError("Please enter zipcode!")
+    }
+    return errors
+  }
+  
 
 
 const uiSchema = {
@@ -243,7 +249,7 @@ const uiSchema = {
         },
           "gender": {
 		"ui:placeholder": "Gender",
-		"classNames": "mt-md-4 form-select form-select-sm mb-3 predefined",
+		"classNames": "mt-md-4 predefined",
 		"ui:options": {
 			label: false
 		  }, 
@@ -261,14 +267,14 @@ const uiSchema = {
         },
             "marital_status": {
 		"ui:placeholder": "Marital Status",
-		"classNames": "mt-md-4 form-select form-select-sm mb-3",
+		"classNames": "mt-md-4 ",
 		"ui:options": {
 			label: false
 		  }, 
       },
       "estimated_credit_score": {
         "ui:placeholder": "How is your credit?",
-        "classNames": "mt-md-4 form-select form-select-sm mb-3",
+        "classNames": "mt-md-4 ",
         "ui:options": {
             label: false
           },
@@ -276,7 +282,7 @@ const uiSchema = {
 
         "lease_own_finance": {
             "ui:placeholder": "Is your car owned, leased, financial?",
-            "classNames": "mt-md-4 form-select form-select-sm mb-3",
+            "classNames": "mt-md-4 ",
             "ui:options": {
                 label: false
               },
@@ -325,7 +331,7 @@ const uiSchema = {
                 },
              "has_auto_insurance":{
                 "ui:placeholder": "Do you currently have insurance?",
-                "classNames": "mt-md-4 form-select form-select-sm mb-3",
+                "classNames": "mt-md-4 ",
                 "ui:options": {
                     label: false
                   },
@@ -361,6 +367,7 @@ const AgentForm = ()=> {
             uiSchema={uiSchema}
 			// FieldTemplate={Tpl} 
 			// className="row"
+      validate={validate}
       className= 'px-md-0 py-md-0'
 			fields={fields}
 			// onSubmit={onSubmit}

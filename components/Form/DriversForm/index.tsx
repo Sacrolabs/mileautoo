@@ -279,7 +279,7 @@ const uiSchema = {
 		"ui:options": {
 			label: false
 		  },
-		 "classNames":"mt-md-4 form-select form-select-sm mb-3",
+		 "classNames":"mt-md-4 ",
         },
        
        "marital_status": {
@@ -287,7 +287,7 @@ const uiSchema = {
 		"ui:options": {
 			label: false
 		  },
-		 "classNames":"mt-md-4 form-select form-select-sm mb-3",
+		 "classNames":"mt-md-4 ",
         },
        
        "home_rental_status": {
@@ -295,7 +295,7 @@ const uiSchema = {
 		"ui:options": {
 			label: false
 		  },
-		 "classNames":"mt-md-4 form-select form-select-sm mb-3",
+		 "classNames":"mt-md-4 ",
         },
        
        "level_of_education": {
@@ -303,7 +303,7 @@ const uiSchema = {
 		"ui:options": {
 			label: false
 		  },
-		 "classNames":"mt-md-4 form-select form-select-sm mb-3",
+		 "classNames":"mt-md-4 ",
 	  },
 	
        "has_auto_insurance": {
@@ -311,7 +311,7 @@ const uiSchema = {
 		"ui:options": {
 			label: false
 		  },
-		 "classNames":"mt-md-4 form-select form-select-sm mb-3",
+		 "classNames":"mt-md-4 ",
 	  },
        
        "accidents_convictions": {
@@ -319,7 +319,7 @@ const uiSchema = {
 		"ui:options": {
 			label: false
 		  },
-		 "classNames":"mt-md-4 form-select form-select-sm mb-3",
+		 "classNames":"mt-md-4 ",
 	  },
     //    another_driver_policy
         "another_driver_policy": {
@@ -327,7 +327,7 @@ const uiSchema = {
 		"ui:options": {
 			label: false
 		  },
-		 "classNames":"mt-md-4 form-select form-select-sm mb-3",
+		 "classNames":"mt-md-4 ",
         },
         
 		},

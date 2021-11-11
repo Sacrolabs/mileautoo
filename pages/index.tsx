@@ -820,6 +820,7 @@ const Home = ()=> {
     
            <script src="./assets/js/glider.min.js"></script>
             <script src="./assets/js/home.js"></script>
+            
 
     </>
   )

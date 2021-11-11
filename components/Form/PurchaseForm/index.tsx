@@ -129,21 +129,21 @@ const uiSchema = {
   
       "license_state": {
 			"ui:placeholder": "License State",
-            "classNames": "mt-md-4 form-select form-select-sm mb-3",
+            "classNames": "mt-md-4 ",
 			"ui:options": {
 				label: false
             },
         },
         "license_status": {
 			"ui:placeholder": "License Status",
-            "classNames": "mt-md-4 form-select form-select-sm mb-3",
+            "classNames": "mt-md-4 ",
 			"ui:options": {
 				label: false
             },
         },
         "license_number": {
 			"ui:placeholder": "License Number",
-            "classNames": "mt-md-4 form-select form-select-sm mb-3",
+            "classNames": "mt-md-4 ",
 			"ui:options": {
 				label: false
             },

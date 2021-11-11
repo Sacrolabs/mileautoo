@@ -198,7 +198,7 @@ header .burger {
     margin-bottom: 5px;
 }
 .home-form input,
-.home-form .select-group .screen {
+/* .home-form .select-group .screen {
     height: 50px;
     width: 100%;
     border-radius: 7px;
@@ -207,7 +207,7 @@ header .burger {
     padding: 0 25px;
     font-size: 14px;
     color: var(--color-text-light);
-}
+} */
 .home-form input[type=submit] {
     font-family: var(--font-secondary);
     margin-top: 35px;
@@ -223,7 +223,7 @@ header .burger {
 .home-form input[type=submit]:hover {
     filter: brightness(0.8);
 }
-.home-form .select-group select {
+/* .home-form .select-group select {
     display: none;
 }
 .home-form .select-group .pretty-select {
@@ -283,7 +283,7 @@ header .burger {
 }
 .home-form .select-group.active .options div:not(:last-of-type) {
     border-bottom: 2px solid #eaeaea;
-}
+} */
 
 
 /* ############################# */

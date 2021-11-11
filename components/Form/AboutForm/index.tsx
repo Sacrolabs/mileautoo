@@ -147,7 +147,7 @@ const uiSchema = {
         },
             "open_position": {
 		"ui:placeholder": "Select Open Positions",
-		"classNames": "mt-md-4 form-select form-select-sm mb-3",
+		"classNames": "mt-md-4 ",
 		"ui:options": {
 			label: false
 		  }, 

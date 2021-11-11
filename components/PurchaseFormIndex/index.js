@@ -17,7 +17,7 @@ import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 
 
-            <div className="row" style={{}}>
+            <div className="row mt-md-4" style={{}}>
 			
             <div className="d-flex col-md-6 align-items-center justify-content-center">
             <button className="btn" style={{height:'45px', width:'350px', borderRadius:"5px", borderColor:'#2A8854', color:'#2A8854', borderStyle:"solid", borderWidth:"0.15rem"}} type="button">Cancel</button>

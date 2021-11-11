@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Footer = ()=> {
     return (
@@ -11,7 +12,10 @@ const Footer = ()=> {
                 <li><a href="#">Quote</a></li>
             </ul>
             <div className="center">
-                <img className="logo" loading="lazy" src="./assets/images/logo-white.png" alt="logo-white"/>
+            {/* width: 185px; height: 55px; */}
+                {/* <img className="logo" loading="lazy" src="./assets/images/logo-white.png" alt="logo-white"/> */}
+                <Image  width={185} height={55}  className="logo" loading="lazy" src="/assets/images/logo-white.png" alt="logo-white"/>
+                {/* <Image  objectFit="inherit"  className="logo" loading="lazy" src="/assets/images/logo-white.png" alt="logo-white"/>  */}
                 <div className="socials">
                     <a href="#"><img loading="lazy" src="./assets/images/icon-facebook.svg" alt="icon-facebook"/></a>
                     <a href="#"><img loading="lazy" src="./assets/images/icon-twitter.svg" alt="icon-twitter"/></a>
