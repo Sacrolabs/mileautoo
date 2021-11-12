@@ -93,17 +93,7 @@ const uiSchema = {
       'ui:field': 'layout_grid',
 	  //   "classNames": 'step information active ',
 	"classNames": '',
-    // "zip_code",
-    // "date_of_birth",
-    // "gender",
-    // "marital_status",
-    // "estimated_credit_score",
-    // "lease_own_finance",
-    // "owned_year",
-    // "make",
-    // "has_auto_insurance",
-    // "agent_code",
-    
+   
     'ui:layout_grid':{ 'ui:row': [
     { 'ui:col': { md: 12, children:
 	 [ 

@@ -1,5 +1,6 @@
 import React from 'react'
 import AboutForm from '../components/Form/AboutForm'
+import MultiFormDemo from '../components/Form/MultiFormDemo'
 
 const About = ()=> {
     return (
@@ -358,7 +359,8 @@ const About = ()=> {
                 <div className="home-form">
                     <h2>How much can I save with Mile Auto?</h2>
 
-                    <AboutForm />
+                    {/* <AboutForm /> */}
+                    <MultiFormDemo/>
                             
                     {/* <form action="" method="post">
                         <input type="text" name="name" placeholder="Full Name" required />

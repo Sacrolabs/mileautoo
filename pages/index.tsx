@@ -73,8 +73,8 @@ const Home = ()=> {
             <div className="home-form">
                 <h2>How much can I save with Mile Auto?</h2>
 
-                 {/* <IndexForm/> */}
-                 <MultiForm/>
+                 <IndexForm/>
+                 {/* <MultiForm/> */}
 
                 {/* <form action="" method="post">
                     <input type="number" name="zip" placeholder="Zip Code" required/>
@@ -764,7 +764,9 @@ const Home = ()=> {
             <p className="subtitle">No credit check required</p>
             <div className="home-form">
                 <h2>How much can I save with Mile Auto?</h2>
-                <IndexForm/>
+
+                <MultiForm/>
+                {/* <IndexForm/> */}
 
 {/* 
                 <form action="" method="post">

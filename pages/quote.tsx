@@ -9,6 +9,8 @@ import DriversForm from '../components/Form/DriversForm'
 import CoverageForm from '../components/Form/CoverageForm'
 import PurchaseForm from '../components/Form/PurchaseForm'
 import PurchaseFormIndex from '../components/PurchaseFormIndex'
+import MultiForm from '../components/Form/MultiFrom'
+
 
 const Quote = ()=> {
 
@@ -55,7 +57,9 @@ const Quote = ()=> {
                    <h4>Your Information</h4>
                </div>
 
-               <CustomerForm />
+              <MultiForm/>
+
+               {/* <CustomerForm /> */}
 
                {/* <VehicleForm /> */}
                

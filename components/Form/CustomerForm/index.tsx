@@ -240,16 +240,11 @@ const uiSchema = {
 		//   }
 	  },
 	  "mobile_phone_number": {
-        "ui:options": {
-			inputType: 'tel'
-		  },
+        
 		  "ui:placeholder": "Mobile (000-000-0000)",
 			"ui:options": {
 				label: false
 		  },
-		// "ui:widget": "number",
-        // 'ui:column': 'xs6'	
-		//   "ui:help": "Hint: Type is cautiously!"
 
 	  },
    
@@ -320,12 +315,7 @@ const uiSchema = {
 			  }
 		  },
 
-		  "length_of_residency": {
-			"ui:placeholder": "Length of Residency?",
-			"ui:options": {
-				label: false
-			  }
-		  },
+	
 	
 		},
   
