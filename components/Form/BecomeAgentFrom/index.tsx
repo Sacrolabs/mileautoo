@@ -59,7 +59,6 @@ const mySchema = {
 			  "Google",
               "Other",
             ],
-		    //  "$ref":"#/definitions/largeEnum"
 
 		  },
       "comparative_rate":{

@@ -6,13 +6,10 @@ import LayoutField   from 'react-jsonschema-form-layout-grid'
 
 
 const mySchema = {
-//   "title": "QuoteRequest",
+//   "title": "Login Request",
 	"type": "object",
-	// "examples": [],
-	"properties": {
-	//   "customer": {
-		"": {
-		"type": "object",
+	
+		
 		"required": [
             "email",
             "password"
@@ -21,18 +18,50 @@ const mySchema = {
 			"email": {
 			  "type": "string",
 			  "title": "Email",
-			  "format": "email",
+			//   "format": "email",
+			//   "pattern":"",
+			format: 'email_addr',
+			  
 			},
 			"password": {
                 "type": "string",
 				"title": "Password",
-				"format": "password",
+				// "format": "password",
+				format: "password_format",
+				"minLength": 8,
+
               },
         }
 	  }
-   }
-}
+ 
 
+
+
+const customFormats = {
+	'email_addr': /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ ,
+	'password_format': /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
+  }
+
+
+
+  const transformErrors = (errors) => {
+	return errors.map(error => {
+	//   if (error.name === "format") {
+	// 	error.message = "Email format must be valid"
+	//   }
+	if (error.property === ".email") {
+		error.message = "Please enter a valid Email"
+	  }
+	if(error.property === ".password" && error.name == "format")
+	error.message = "Please enter a valid Password"
+
+	if(error.property === ".password" && error.name == "minLength")
+	error.message = "Password must be 8 characters long"
+	  
+	console.log("Error:", error)
+	  return error;
+	});
+  }
 
   const fields = {
   layout_grid: LayoutField ,
@@ -49,13 +78,6 @@ const Tpl = (props)=> {
 	console.log("Childern:",children)
 
 	console.log("Props:",props)
-	// const elementClass = (id =="") ? "wanted_class_name" : ""
-
-	// const elementClass = (id =="root__estimated_credit_score") ? "options pretty-select" : "props.className"
-    // custom-select
-	// const elementClass = (id =="root__estimated_credit_score") ? "options" : `${props.classNames}`
-
-	// const elementClass = (id == "root__estimated_credit_score") ? "custom-select" : `${props.classNames}`
 	
 	return (
 	  <div className="form-group">
@@ -75,22 +97,20 @@ const Tpl = (props)=> {
 
 const uiSchema = {
 	"ui:FieldTemplate": Tpl,
-    // name: { 'ui:title': 'Full Name' },
-    "": {
-    //   'ui:field': 'customer', // associate the address section of schema with the address custom field
+    
       'ui:field': 'layout_grid',
-	  //   "classNames": 'step information active ',
+	 
 	"classNames": '',
-    // "zip_code",
-    // "date_of_birth",
-    // "gender",
-    // "marital_status",
-    // "estimated_credit_score",
-    // "lease_own_finance",
-    // "owned_year",
-    // "make",
-    // "has_auto_insurance",
-    // "agent_code",
+
+	"ui:options": {
+		"semantic" : {
+		  "errorOptions": {
+			"size": "small",
+			"pointing": "above",
+		  }
+		}
+	  },
+    
     
     'ui:layout_grid':{ 'ui:row': [
     { 'ui:col': { md: 12, children:
@@ -119,14 +139,7 @@ const uiSchema = {
 		"ui:options": {
 			label: false
 		  }, 
-        //   "ui:widget": (props) => {
-		// 	return (
-		// 	  <input 
-		// 	    placeholder={props.placeholder}
-		// 	    className=""
-		// 		 />
-		// 	);
-		//   }
+       
       },
       "password": {
 		"ui:placeholder": "Password",
@@ -135,17 +148,13 @@ const uiSchema = {
 		"ui:options": {
 			label: false
 		  }, 
-        //   "ui:widget": (props) => {
-		// 	return (
-		// 	  <input 
-		// 	    placeholder={props.placeholder}
-		// 	    className=""
-		// 		 />
-		// 	);
-		//   }
+		// "ui:help":"Hint: Minimum eight characters, at least one letter, one number and one special character",
+        "ui:help":"Hint: Password must be eight characters, at least one letter, one number and one special character",
+       
+		// "ui:help": "Hint: Make it strong!"
       },
         
-		},
+		
   
 
 }
@@ -168,7 +177,9 @@ const LoginForm = ()=> {
 			// className="row"
 			className= 'px-md-0 py-md-0'
 			fields={fields}
-			// onSubmit={onSubmit}
+			customFormats={customFormats}
+			transformErrors={transformErrors}
+			showErrorList= {false}
             >
 
                 <div className="extra-controls">

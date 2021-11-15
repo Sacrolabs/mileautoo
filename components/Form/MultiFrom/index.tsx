@@ -5,7 +5,7 @@ import LayoutField   from 'react-jsonschema-form-layout-grid'
 
  const MultiForm = () => {
 
-    const [step, setStep] = useState(1)
+    var [step, setStep] = useState(1)
 
     const [formData, setFormData] = useState(null)
 
@@ -107,8 +107,10 @@ import LayoutField   from 'react-jsonschema-form-layout-grid'
       
       const vehicleSchema = {
         title: "Step 2",
+        // "type": "object, boolean",
         "type": "object",
         "required": [
+              //  "choose_details",
             // "year",
             // "make",
             // "model",
@@ -118,6 +120,55 @@ import LayoutField   from 'react-jsonschema-form-layout-grid'
             // "purpose",
             // "annual_mileage"
             ],
+
+            "dependencies": {
+              "choose_details": {
+                "oneOf": [
+                  {
+                    "properties": {
+                      "choose_details": {
+                        "enum": [
+                          "Year/Make/Model"
+                        ]
+                      },
+                      "year": {
+                        "type": "number",
+                        // "type": "string",
+                        //  'format': 'date',
+                      },
+                      "make": {
+                        "type": "string"
+                      },
+                      "model": {
+                        "type": "string"
+                      },
+                      "required": [
+                     "year",
+                     "make",
+                     "model",
+                      ],
+                    }
+                  },
+            
+                  {
+                    "properties": {
+                      "choose_details": {
+                        "enum": [
+                          "VIN"
+                        ]
+                      },
+                      "VIN": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "VIN"
+                    ]
+                  },
+            
+                ]
+              }
+            },
         
         "properties": {
             
@@ -128,38 +179,43 @@ import LayoutField   from 'react-jsonschema-form-layout-grid'
     //     { "value": "b", "name": "B" },
     //     { "value": "a", "name": "A" }
     //   ],    
-            "type": "boolean",
+            // "type": "boolean",
+            "type":"string",
             "enum": [
-            //   "Year/Make/Model",
-            //   "VIN",
-                true,
-                false
+              "Year/Make/Model",
+              "VIN",
+                // true,
+                // false
             ],
-            "enumNames": [
-            "Year/Make/Model",
-            "VIN"
-             ],
-            "default": true,
-            "title": "radio buttons",
-            "description": "This is the radio-description"
+            // "enumNames": [
+            // "Year/Make/Model",
+            // "VIN"
+            //  ],
+            "default": "Year/Make/Model",
+            // "title": "radio buttons",
+            // "description": "This is the radio-description"
             },
 
-			"year": {
-                "type": "number",
-                // "type": "string",
-                //  'format': 'date',
-			},
-			"make": {
-			  "type": "string"
-			},
-			"model": {
-			  "type": "string"
-			},
+			// "year": {
+      //           "type": "number",
+      //           // "type": "string",
+      //           //  'format': 'date',
+			// },
+			// "make": {
+			//   "type": "string"
+			// },
+			// "model": {
+			//   "type": "string"
+			// },
 			"style": {
 			  "type": "string"
 			},
 			"prior_damage": {
-			  "type": "boolean"
+			  "type": "string",
+        "enum": [
+          "Yes",
+          "No"
+        ],
 			},
 			"lease_own_finance": {
 			  "type": "string",
@@ -670,6 +726,13 @@ const vehicleUiSchema= {
     
           ]
                 },
+
+        {
+         'ui:row': [
+            {'ui:col':{md: 12, children: ['VIN']}}
+           ]
+           },
+
              {
         'ui:row': [
           { 'ui:col': { md: 6, children: ['style'] } },
@@ -723,6 +786,12 @@ const vehicleUiSchema= {
             label: false
             },
             },
+            "VIN": {
+              "ui:placeholder": "VIN",
+              "ui:options": {
+                label: false
+                },
+                },
             "style": {
           "ui:placeholder": "Style(Body style/Trim level)",
           "ui:options": {
@@ -731,12 +800,14 @@ const vehicleUiSchema= {
             },
              "prior_damage": {
           "ui:placeholder": "Does this vehicle have existing damage?",
+          "classNames": "mt-md-4 ",
           "ui:options": {
             label: false
             },
             },
             "lease_own_finance": {
           "ui:placeholder": "Is your vehicle owned, leased, or financed?",
+          "classNames": "mt-md-4 ",
           "ui:options": {
             label: false
                 },
@@ -1092,6 +1163,13 @@ const purchaseUiSchema = {
         },
 }
 
+
+   const handleBack = () => {
+    setStep(step-1)
+
+    console.log("Clicked back button & step count:", step)
+   }
+
     const onSubmit = ({formData}, e) => {
       
       e.preventDefault()
@@ -1186,8 +1264,9 @@ const purchaseUiSchema = {
 
     return (
         <div>
-            <Form 
-	  
+            <Form
+	             id="json-form"
+
                 schema={
                   
                   step === 1 && customerSchema 
@@ -1219,8 +1298,42 @@ const purchaseUiSchema = {
                 onChange={e => setFormData(e.formData)}
                 formData={formData}
 
+                 
                 fields={fields}
-                />
+                >
+                
+                <></>
+
+                </Form>
+
+
+  
+
+     {step===1&&
+      <div className="row my-md-4" style={{}}>
+          <div className="d-flex col-md-12 align-items-center justify-content-center">
+            <button className="btn btn-success" value="Start" form="json-form" style={{height:'45px', width:'350px'}} >Continue</button>
+          </div>
+ 
+      </div>
+     }
+
+    {step>=2&&
+          <div className="row my-md-4" style={{}}>
+        
+              <div className="d-flex col-md-6 align-items-center justify-content-center">
+
+                  <button type="button" onClick={handleBack} className="btn btn-secondary" style={{height:'45px', width:'350px'}} >Back</button>
+                    
+                </div>
+
+              <div className="d-flex col-md-6 align-items-center justify-content-center">
+                <button className="btn btn-success" value="Start" type="submit" form="json-form" style={{height:'45px', width:'350px'}} >Continue</button>
+              </div>
+          </div>
+    }
+                  
+
         </div>
     )
 }
