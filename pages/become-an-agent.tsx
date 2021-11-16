@@ -1,7 +1,7 @@
 import React from 'react'
 import BecomeAgentFrom from '../components/Form/BecomeAgentFrom'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-
+import Script from 'next/script'
 
 const BecomeAnAgent = ()=> {
     return (
@@ -116,7 +116,7 @@ const BecomeAnAgent = ()=> {
         </form>
     </section>
     
-    <script src="./assets/js/quote.js"></script>
+    <Script src="./assets/js/quote.js"></Script>
         </>
     )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import LoginForm from '../components/Form/LoginForm'
+import Script from 'next/script'
 
 const Login = ()=> {
     return (
@@ -37,7 +38,7 @@ const Login = ()=> {
          */}
         </div>
     </section>
-      <script src="./assets/js/account.js"></script>
+      <Script src="./assets/js/account.js"></Script>
         </>
     )
 }

@@ -2,6 +2,8 @@ import React from 'react'
 import AboutForm from '../components/Form/AboutForm'
 import MultiFormDemo from '../components/Form/MultiFormDemo'
 
+import Script from 'next/script'
+
 const About = ()=> {
     return (
         <>
@@ -396,8 +398,8 @@ const About = ()=> {
         </div>
         <img loading="lazy" className="bg" src="./assets/images/about-footer-bg.svg" alt="bg-footer-form"/>
     </section>
-    <script src="./assets/js/glider.min.js"></script>
-    <script src="./assets/js/about.js"></script>
+    <Script src="./assets/js/glider.min.js"></Script>
+    <Script src="./assets/js/about.js"></Script>
         </>
     )
 }

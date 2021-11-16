@@ -1,4 +1,5 @@
 import React from 'react'
+import Script from 'next/script'
 import SaveForm from '../components/Form/SaveForm'
 
 const Save = ()=> {
@@ -20,11 +21,11 @@ const Save = ()=> {
             <div className="step active">
                 <div className="form-group price-block">
                     <h2>$1022 Per Year</h2>
-                    <p>(That's roughly 341 cups of coffee)</p>
+                    <p>(That is roughly 341 cups of coffee)</p>
                 </div>
                 <div className="form-group text">
                     <p>Stop overpaying for traditional insurance and make the switch today.</p>
-                    <p>Let's personalize your policy by entering a bit more information:</p>
+                    <p>Let personalize your policy by entering a bit more information:</p>
                 </div>
 
                <SaveForm/>
@@ -221,7 +222,7 @@ const Save = ()=> {
         </form>
     </section>
      
-    <script src="./assets/js/quote.js"></script>
+    <Script src="./assets/js/quote.js"></Script>
         </>
     )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import Script from 'next/script'
 
 const Chatbot = ()=> {
     return (
@@ -111,7 +112,7 @@ const Chatbot = ()=> {
         </div>
     </section>
     
-    <script src="./assets/js/chatbot.js"></script>
+    <Script src="./assets/js/chatbot.js"></Script>
         </>
     )
 }

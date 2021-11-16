@@ -1,6 +1,7 @@
 import React from 'react'
 import AgentForm from '../components/Form/AgentForm'
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
+import Script from 'next/script'
 
 const AgentPage = ()=> {
     return (
@@ -233,7 +234,7 @@ const AgentPage = ()=> {
             <a href="#" className="button green">BECOME AN AGENT</a>
         </div>
     </section>
-      <script src="./assets/js/quote.js"></script>
+      <Script src="./assets/js/quote.js"></Script>
         </>
     )
 }

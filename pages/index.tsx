@@ -7,6 +7,7 @@ import * as React from 'react'
 
 import IndexForm from "../components/Form/IndexFrom"
 import MultiForm from "../components/Form/MultiFrom"
+import Script from 'next/script'
 
 import Slider from 'react-slick'
 
@@ -822,8 +823,8 @@ const Home = ()=> {
         <img loading="lazy" className="bg" src="./assets/images/bg-footer-form.svg" alt="bg-footer-form"/>
     </section>
     
-           <script src="./assets/js/glider.min.js"></script>
-            <script src="./assets/js/home.js"></script>
+           <Script src="./assets/js/glider.min.js"></Script>
+            <Script src="./assets/js/home.js"></Script>
             
 
     </>

@@ -6,6 +6,7 @@ import VehicleDashForm from '../components/Form/VehicleDashForm';
 import DriversDashForm from '../components/Form/DriversDashForm';
 import EditCoverageForm from '../components/Form/EditCoverageForm';
 
+
 const Dashboard = ()=> {
 
     return (
@@ -24,10 +25,10 @@ const Dashboard = ()=> {
         <div className="dashboard-form">
             <div className="selector">
                 <div data-tab="1" onClick={()=>{
-                   removeActiveFromList('.dashboard .selector .item');
-                    removeActiveFromList('.dashboard .screens .screen');
-                    addActive('.dashboard .selector .item[data-tab=\'1\']');
-                    addActive('.vehicle-drivers');
+                //    removeActiveFromList('.dashboard .selector .item');
+                //     removeActiveFromList('.dashboard .screens .screen');
+                //     addActive('.dashboard .selector .item[data-tab=\'1\']');
+                //     addActive('.vehicle-drivers');
                 }
                     }
                     className="item active">
@@ -36,21 +37,36 @@ const Dashboard = ()=> {
                     </div>
                     <p>CHANGE VEHICLE</p>
                 </div>
-                <div data-tab="2" onClick="
-                    removeActiveFromList('.dashboard .selector .item'); 
-                    removeActiveFromList('.dashboard .screens .screen'); 
-                    addActive('.dashboard .selector .item[data-tab=\'2\']'); 
-                    addActive('.vehicle-drivers');" className="item">
+                <div 
+                    data-tab="2"
+                    className="item"
+                    onClick= {()=>{
+
+                        // removeActiveFromList('.dashboard .selector .item'); 
+                        // removeActiveFromList('.dashboard .screens .screen'); 
+                        // addActive('.dashboard .selector .item[data-tab=\'2\']'); 
+                        // addActive('.vehicle-drivers');
+                    }}
+                      
+                    
+                    >
+
                     <div className="icon">
                         <img src="./assets/images/dash-icon-person.svg" alt="dash-icon-person"/>
                     </div>
                     <p>CHANGE DRIVERS</p>
                 </div>
-                <div data-tab="3" onClick="
-                    removeActiveFromList('.dashboard .selector .item'); 
-                    removeActiveFromList('.dashboard .screens .screen'); 
-                    addActive('.dashboard .selector .item[data-tab=\'3\']'); 
-                    addActive('.change-coverage');" className="item">
+                <div data-tab="3" 
+                
+                onClick= {()=>{
+                    // removeActiveFromList('.dashboard .selector .item'); 
+                    // removeActiveFromList('.dashboard .screens .screen'); 
+                    // addActive('.dashboard .selector .item[data-tab=\'3\']'); 
+                    // addActive('.change-coverage');
+                }}
+                   
+                    
+                    className="item">
                     <div className="icon">
                         <img src="./assets/images/dash-icon-list.svg" alt="dash-icon-list"/>
                     </div>
@@ -730,7 +746,7 @@ const Dashboard = ()=> {
         </div>
     </section>
     
-    <script src="./assets/js/account.js"></script>
+    <Script src="./assets/js/account.js"></Script>
         </>
     )
 }

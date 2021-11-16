@@ -1,17 +1,46 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Header = ()=> {
     return (
         <>
             <header>
             <nav>
-            <a href="/" className="logo"><img loading="lazy" src="./assets/images/logo.png" alt="mile-auto-logo"/></a>
+  
+            <Link href="/"> 
+            <a className="logo"><img loading="lazy" src="./assets/images/logo.png" alt="mile-auto-logo"/></a>
+            </Link>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Agents</a></li>
-                <li className="login"><a href="#"><img loading="lazy" src="./assets/images/icon-login.svg" alt="icon-login"/>&nbsp;Log in</a></li>
-                <li className="get-quote"><a href="#">GET A QUOTE</a></li>
+                <li>
+                    <Link href="/">
+                        <a>Home</a>
+                    </Link>
+                </li>
+
+                <li>
+                     <Link href="/about">
+                         <a>FAQs</a>
+                     </Link>
+                 </li>
+
+                <li>
+                     <Link href="/become-an-agent">
+                         <a>Agents</a>
+                        </Link> 
+                </li>
+
+                <li className="login">
+                    <Link href="/login">
+                         <a><img loading="lazy" src="./assets/images/icon-login.svg" alt="icon-login"/>Log in</a>
+                    </Link>
+                </li>
+                
+                <li className="get-quote">
+                     <Link href="/quote">
+                         <a>GET A QUOTE</a>
+                     </Link>
+                 </li>
+
             </ul>
             <span className="burger"></span>
         </nav>

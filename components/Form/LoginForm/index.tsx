@@ -187,7 +187,8 @@ const LoginForm = ()=> {
                         <div className="checkbox-wrap">
                             <input type="checkbox" id="remain-logged-in" name="remain-logged-in"/>
                         </div>
-                        <label for="remain-logged-in">Remain logged in</label>
+                        {/* <label for="remain-logged-in">Remain logged in</label> */}
+						<label>Remain logged in</label>
                     </div>
                     <a href="#">Change or Reset Password</a>
                 </div>

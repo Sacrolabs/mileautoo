@@ -1,4 +1,5 @@
 import React from 'react'
+import Script from 'next/script'
 
 const Estimate = ()=> {
     return (
@@ -41,7 +42,7 @@ const Estimate = ()=> {
             
         </form>
     </section>
-     <script src="./assets/js/quote.js"></script>
+     <Script src="./assets/js/quote.js"></Script>
         </>
     )
 }

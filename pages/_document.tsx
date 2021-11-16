@@ -25,10 +25,10 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
             
-            {/* <script src="./assets/js/quote.js"></script>
-            <script src="./assets/js/about.js"></script>
-            <script src="./assets/js/account.js"></script>
-            <script src="./assets/js/chatbot.js"></script> */}
+            {/* <Script src="./assets/js/quote.js"></Script>
+            <Script src="./assets/js/about.js"></Script>
+            <Script src="./assets/js/account.js"></Script>
+            <Script src="./assets/js/chatbot.js"></Script> */}
         </body>
       </Html>
     )

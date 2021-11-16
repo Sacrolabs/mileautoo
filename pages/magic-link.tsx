@@ -1,4 +1,5 @@
 import React from 'react'
+import Script from 'next/script'
 import MagicForm from '../components/Form/MagicForm'
 
 const MagicLink = ()=> {
@@ -27,7 +28,7 @@ const MagicLink = ()=> {
     </section>
     
 
-    <script src="./assets/js/account.js"></script>
+    <Script src="./assets/js/account.js"></Script>
         </>
     )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import Script from 'next/script'
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
 // import Form from 'react-jsonschema-form'
 
@@ -1154,7 +1155,7 @@ const Quote = ()=> {
         {/* </form> */}
     </section>
      
-      <script src="./assets/js/quote.js"></script>
+      <Script src="./assets/js/quote.js"></Script>
         </>
     )
 }
