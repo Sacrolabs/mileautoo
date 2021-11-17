@@ -57,7 +57,7 @@ section .wrapper {
     color: #FF0000 !important;
 }
 .predefined {
-    pointer-events: none !important;
+    /* pointer-events: none !important; */
     background-color: #eaeaea !important;
 }
 
@@ -208,7 +208,7 @@ header .burger {
     font-size: 14px;
     color: var(--color-text-light);
 } */
-.home-form input[type=submit] {
+/* .home-form input[type=submit] {
     font-family: var(--font-secondary);
     margin-top: 35px;
     background-color: var(--color-cta);
@@ -219,7 +219,7 @@ header .burger {
     cursor: pointer;
     transition: .2s;
     border: 0;
-}
+} */
 .home-form input[type=submit]:hover {
     filter: brightness(0.8);
 }
