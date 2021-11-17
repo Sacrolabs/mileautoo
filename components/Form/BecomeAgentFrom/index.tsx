@@ -122,9 +122,9 @@ const Tpl = (props)=> {
 				<option className="customselect" value="">{placehold}</option>  
 				{
 				// children[0].props.schema.enum
-				selectItem.map((item)=>
+				selectItem.map((item, i)=>
 				
-				  <option value={item}>
+				  <option key={i} value={item}>
                      {item}
 				  </option>
 				)
