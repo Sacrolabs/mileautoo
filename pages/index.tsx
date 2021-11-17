@@ -766,8 +766,8 @@ const Home = ()=> {
             <div className="home-form">
                 <h2>How much can I save with Mile Auto?</h2>
 
-                <MultiForm/>
-                {/* <IndexForm/> */}
+                {/* <MultiForm/> */}
+                <IndexForm/>
 
 {/* 
                 <form action="" method="post">
