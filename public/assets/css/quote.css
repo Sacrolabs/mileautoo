@@ -59,6 +59,27 @@ section .wrapper {
     max-width: 1107px;
     margin: 0 15px;
 }
+
+.dropdwn {
+    /* min-height: 50px !important; */
+    /* background-color: #0070f3; */
+    background: white;
+    height: 50px;
+    width: 100%;
+    border-radius: 7px;
+  }
+
+ .form-group .custom-select :after {
+    /* content: '▼'; */
+    content: 'Hi There';
+    /* font-size: 20px;
+    position: absolute;
+    right: 17px;
+    transition: .2s; */
+    color: #FF0000;
+}
+  
+
 .account-hero {
     position: absolute;
     top: 90px;

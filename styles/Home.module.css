@@ -114,6 +114,16 @@
     flex-direction: column;
   }
 }
-.dropdwn {
+/* .dropdwn {
   min-height: 50px !important;
+} */
+
+/* .dropdwn {
+  min-height: 50px !important;
+} */
+
+@media (max-width: 576px) {
+  .aboveDiv{
+    padding-top: 20px !important;
+  }
 }

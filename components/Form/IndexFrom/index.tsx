@@ -110,18 +110,18 @@ const uiSchema = {
 		"ui:options": {
 			label: false
 		  }, 
-          "ui:widget": (props) => {
-			return (
-			  <input 
-			    placeholder={props.placeholder}
-			    className="predefined"
-				 />
-			);
-		  }
+        //   "ui:widget": (props) => {
+		// 	return (
+		// 	  <input 
+		// 	    placeholder={props.placeholder}
+		// 	    className="predefined"
+		// 		 />
+		// 	);
+		//   }
       },
       "miles_year": {
 		"ui:placeholder": "Miles You Drive per Year",
-		"classNames": "mt-md-4",
+		"classNames": "mt-md-4 ",
 		"ui:options": {
 			label: false
 		  }, 

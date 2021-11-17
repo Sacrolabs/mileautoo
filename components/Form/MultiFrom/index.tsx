@@ -622,7 +622,7 @@ const coverageSchema = {
             label: false
             },
           //   "classNames":"screen input-error mt-md-3 form-select",
-           "classNames":"mt-md-4 ",
+           "classNames":"mt-md-5 ",
             
           },
           "mobile_phone_number": {
@@ -1297,7 +1297,7 @@ const purchaseUiSchema = {
                 // formData={purchaseFormData}
                 onChange={e => setFormData(e.formData)}
                 formData={formData}
-
+                // className="home-form"
                  
                 fields={fields}
                 >
@@ -1310,7 +1310,7 @@ const purchaseUiSchema = {
   
 
      {step===1&&
-      <div className="row my-md-4" style={{}}>
+      <div className="row my-sm-4 my-md-4" style={{marginTop:'25px'}}>
           <div className="d-flex col-md-12 align-items-center justify-content-center">
             <button className="btn btn-success" value="Start" form="json-form" style={{height:'45px', width:'350px'}} >Continue</button>
           </div>
@@ -1319,15 +1319,15 @@ const purchaseUiSchema = {
      }
 
     {step>=2&&
-          <div className="row my-md-4" style={{}}>
+          <div className="row my-sm-4" style={{}}>
         
-              <div className="d-flex col-md-6 align-items-center justify-content-center">
+              <div className="my-xs-4 my-xl-4 my-sm-4 d-flex col-md-6 align-items-center justify-content-center">
 
                   <button type="button" onClick={handleBack} className="btn btn-secondary" style={{height:'45px', width:'350px'}} >Back</button>
                     
                 </div>
 
-              <div className="d-flex col-md-6 align-items-center justify-content-center">
+              <div className="mt-xs-4 mt-xl-4  d-flex col-md-6 align-items-center justify-content-center">
                 <button className="btn btn-success" value="Start" type="submit" form="json-form" style={{height:'45px', width:'350px'}} >Continue</button>
               </div>
           </div>

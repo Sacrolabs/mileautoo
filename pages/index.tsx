@@ -761,9 +761,12 @@ const Home = ()=> {
 
     <section className="footer-form">
         <div className="wrapper">
+
             <h2>Receive a Quote</h2>
             <p className="subtitle">No credit check required</p>
+
             <div className="home-form">
+
                 <h2>How much can I save with Mile Auto?</h2>
 
                 {/* <MultiForm/> */}

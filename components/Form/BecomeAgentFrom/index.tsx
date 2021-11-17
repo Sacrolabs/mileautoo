@@ -97,10 +97,10 @@ const Tpl = (props)=> {
 	const {id, label, required, children} = props;
     
 	console.log("Element Id:",id)
+	console.log("Props:",props)
 
 	console.log("Childern:",children)
 
-	console.log("Props:",props)
 	// const elementClass = (id =="") ? "wanted_class_name" : ""
 
 	// const elementClass = (id =="root__estimated_credit_score") ? "options pretty-select" : "props.className"
@@ -109,15 +109,35 @@ const Tpl = (props)=> {
 
 	// const elementClass = (id == "root__estimated_credit_score") ? "custom-select" : `${props.classNames}`
 	
+	const selectItem = props.children[0].props.schema.enum
+	console.log("Select items:", selectItem)
+	const placehold = props.children[0].props.uiSchema["ui:placeholder"]
+	// children[0].props.uiSchema["ui:placeholder"]
+	// uiSchema.class
 	return (
 	  <div className="form-group">
+		  {
+			//   id=="root__hear_about"&& <select className="dropdwn">
+			props.uiSchema.class=="mileauto-custom-select" && <select className="dropdwn mt-md-4">
+				<option className="customselect" value="">{placehold}</option>  
+				{
+				// children[0].props.schema.enum
+				selectItem.map((item)=>
+				
+				  <option value={item}>
+                     {item}
+				  </option>
+				)
+			  }</select> 
+		  }
 	 {/* <div className={`${elementClass}`}> */}
-		<label 
-		htmlFor={id}>
+		{/* <label 
+		htmlFor={id}> */}
 			{/* {label} */}
 			{/* {required ? "*" : null} */}
-		</label>
-		{children}
+		{/* </label> */}
+		{/* {id} */}
+		{	props.uiSchema.class!=="mileauto-custom-select"&& children}
 	  </div>
 	)
   }
@@ -245,17 +265,19 @@ const uiSchema = {
 		  
 		  "hear_about": {
 			"ui:placeholder": "How did you hear about us?",
-			"classNames": "custom-select mt-md-4 ",
-			class: "custom-select",
+			"classNames": "custom078-select mt-md-4 ",
+			 class: "mileauto-custom-select",
 			"ui:options": {
 				label: false,
-				class: "custom-select",
+				// class: "custom-select",
+				// class:'',
 			  },
 			  "ui:widget": "select", 
 		  },
 
 		  "comparative_rate": {
 			"ui:placeholder": "Which comparative rater do you use?",
+			class: "mileauto-custom-select",
       "classNames": "mt-md-4 ",
 			"ui:options": {
 				label: false
@@ -293,7 +315,7 @@ const BecomeAgentForm = ()=> {
 			data={formData}
             schema={mySchema}
             uiSchema={uiSchema}
-			// FieldTemplate={Tpl}
+			FieldTemplate={Tpl}
 			className= 'px-md-0 py-md-0'
 			style={{backgroundColor:"red",}}
 			fields={fields}
