@@ -14,9 +14,6 @@ import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
             </div>
 
       
-
-
-
             <div className="row mt-md-4" style={{}}>
 			
             <div className="d-flex col-md-6 align-items-center justify-content-center">
