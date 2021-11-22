@@ -78,7 +78,7 @@ import Form from 'react-jsonschema-form'
             
             console.log("on step 3",formData)
             // console.log("on step 3 formData3",formDat3)
-            break;
+            // break;
 
         default:
           alert("You submitted " + JSON.stringify(formData))

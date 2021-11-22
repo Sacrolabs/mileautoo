@@ -1,11 +1,11 @@
-const burger = document.querySelector('header .burger');
-const menu = document.querySelector('header ul');
-const prettySelects = document.querySelectorAll('.select-group');
+// const burger = document.querySelector('header .burger');
+// const menu = document.querySelector('header ul');
+// const prettySelects = document.querySelectorAll('.select-group');
 // const formStepsNexts = document.querySelectorAll('.quote .next-step');
 // const formStepsPrevs = document.querySelectorAll('.quote .prev-step');
 // const vehicleDetails = document.querySelectorAll('.vehicle-details input');
 
-burger.addEventListener('click', () => {toggleActive(menu)}, {passive: true});
+// burger.addEventListener('click', () => {toggleActive(menu)}, {passive: true});
 
 // prettySelects.forEach(select => {
 //     select.addEventListener('click', (e) => {
@@ -27,20 +27,20 @@ burger.addEventListener('click', () => {toggleActive(menu)}, {passive: true});
 //     input.addEventListener('change', vehicleDetailsHandler, {passive: true});
 // });
 
-function toggleActive(elem) {
-    elem.classList.toggle('active');
-}
+// function toggleActive(elem) {
+//     elem.classList.toggle('active');
+// }
 
-function applySelectedValue(e) {
-    const element = e.target.closest('.pretty-option');
+// function applySelectedValue(e) {
+//     const element = e.target.closest('.pretty-option');
 
-    if (element != null) {
-        if (typeof element.dataset.value != 'undefined') {
-            e.currentTarget.querySelector('select').value = element.dataset.value;
-            e.currentTarget.querySelector('.screen').innerHTML = element.innerHTML;
-        }
-    }
-}
+//     if (element != null) {
+//         if (typeof element.dataset.value != 'undefined') {
+//             e.currentTarget.querySelector('select').value = element.dataset.value;
+//             e.currentTarget.querySelector('.screen').innerHTML = element.innerHTML;
+//         }
+//     }
+// }
 
 // function stepNextHandler(e) {
 //     const currentStep = e.currentTarget.closest('.step');

@@ -9,7 +9,7 @@ import * as Schema from '../Schema'
 
  const MultiForm = () => {
 
-    var [step, setStep] = useState(1)
+    const [step, setStep] = useState(1)
 
     const [formData, setFormData] = useState(null)
 
@@ -33,10 +33,10 @@ const Tpl = (props)=> {
 
 	const {id, label, required, children} = props;
     
-	console.log("Element Id:",id)
-	console.log("Props:",props)
+	// console.log("Element Id:",id)
+	// console.log("Props:",props)
 
-	console.log("Childern:",children)
+	// console.log("Childern:",children)
 
 	const selectItem = props.children[0].props.schema.enum
 
@@ -75,10 +75,12 @@ const Tpl = (props)=> {
     console.log("Clicked back button & step count:", step)
    }
 
-   const onChangeForm = (e)=> {
+  //  const onChangeForm = (e)=> {
 
-     step == 5 && setFormData(e.formData)
-   }
+  //    step == 5 && setFormData(e.formData)
+  //  }
+
+  //  let yourForm
 
     const onSubmit = ({formData}, e) => {
       
@@ -88,67 +90,68 @@ const Tpl = (props)=> {
         case 1 :
 
           setStep(2)
-          setCustomerFormData( {
-            ...customerFormData, 
-            ...formData
-          })
+          // setCustomerFormData( {
+          //   ...customerFormData, 
+          //   ...formData
+          // })
           
-          console.log("on step 1",formData)
-          console.log("Number of keys in formdata of step 1:",Object.keys(formData).length)
+          // console.log("on step 1",formData)
+          // console.log("Number of keys in formdata of step 1:",Object.keys(formData).length)
 
           break;
 
         case 2 :
           setStep(3)
-          setVehicleFormData( {
-            ...vehicleFormData,
-            ...customerFormData, 
-            ...formData
-          })
-          console.log("on step 2",formData)
-          console.log("Number of keys in formdata of step 2:",Object.keys(formData).length)
+          // setVehicleFormData( {
+          //   ...vehicleFormData,
+          //   ...customerFormData, 
+          //   ...formData
+          // })
+          // console.log("on step 2",formData)
+          // console.log("Number of keys in formdata of step 2:",Object.keys(formData).length)
           break;
 
           case 3 :
             setStep(4)
-            setDriverFormData( {
-              ...driverFormData,
-              ...vehicleFormData,
-              ...customerFormData, 
-              ...formData
-            })
-            console.log("on step 3",formData)
-            console.log("Number of keys in formdata of step 3:",Object.keys(formData).length)
+            // setDriverFormData( {
+            //   ...driverFormData,
+            //   ...vehicleFormData,
+            //   ...customerFormData, 
+            //   ...formData
+            // })
+            // console.log("on step 3",formData)
+            // console.log("Number of keys in formdata of step 3:",Object.keys(formData).length)
             break;
 
             case 4 :
               setStep(5)
-              setCoverageFormData( {
-                ...coverageFormData,
-                ...driverFormData,
-                ...vehicleFormData,
-                ...customerFormData, 
-                ...formData
-              })
-              console.log("on step 4",formData)
-              console.log("Number of keys in formdata of step 4:",Object.keys(formData).length)
+              // setCoverageFormData( {
+              //   ...coverageFormData,
+              //   ...driverFormData,
+              //   ...vehicleFormData,
+              //   ...customerFormData, 
+              //   ...formData
+              // })
+              // console.log("on step 4",formData)
+              // console.log("Number of keys in formdata of step 4:",Object.keys(formData).length)
               break;
 
               case 5 :
               
-              setPurchaseFormData( {
-                ...purchaseFormData,
-                ...coverageFormData,
-                ...driverFormData,
-                ...vehicleFormData,
-                ...customerFormData, 
-                ...formData
-              })
+              // setPurchaseFormData( {
+              //   ...purchaseFormData,
+              //   ...coverageFormData,
+              //   ...driverFormData,
+              //   ...vehicleFormData,
+              //   ...customerFormData, 
+              //   ...formData
+              // })
               console.log("on step 5",formData)
-              console.log("Number of keys in formdata of step 5:",Object.keys(formData).length)
+              // console.log("Number of keys in formdata of step 5:",Object.keys(formData).length)
               // break;
 
-
+              // setFormData(formData)
+              // yourForm.submit()
               // case 2 :
               //   setStep(3)
               //   setFormDat2( {
@@ -163,23 +166,29 @@ const Tpl = (props)=> {
 
         default:
           alert("You submitted " + JSON.stringify(formData))
-          // console.log("whole data object:",formData)
-          console.log("whole data object:",JSON.stringify(formData, null, 2))
-          console.log("Number of keys in total formData:",Object.keys(formData).length)
+          console.log("whole data object:",formData)
+          // console.log("whole data object:",JSON.stringify(formData, null, 2))
+          // console.log("Number of keys in total formData:",Object.keys(formData).length)
       }
 
         
        
     }
 
-    var i = 0
+    
+
+    // var i = 0
 
     return (
         <div>
           <link rel="stylesheet" href="./assets/css/multiform.css"/>
           
             <Form
-	             id="json-form"
+	              id="json-form"
+
+                className="section"
+                FieldTemplate={Tpl}
+                fields={fields}
 
                 schema={
                   
@@ -207,16 +216,25 @@ const Tpl = (props)=> {
                 }
 
                 onSubmit={onSubmit}
-                
+                // ref={ (form) => {
+                //           yourForm = form
+                //         }
+                //       }
                 // formData={purchaseFormData}
-                onChange={e => setFormData(e.formData)}
                 // onChange={onChangeForm}
-
-                formData={formData}
-                className="section"
-                FieldTemplate={Tpl}
-                fields={fields}
                 idPrefix={"rjsf_prefix"}
+
+                // onChange={({formData}) => {
+                //   setFormData(formData)
+                //   }
+                // }
+                formData={formData}
+                // formData={''}
+
+                // onChange={console.log("Form Data:", formData), formData}
+
+                
+                
                 >
                 
                 <></>
@@ -224,9 +242,12 @@ const Tpl = (props)=> {
                 </Form>
 
 
-  
 
-     {step===1&&
+     {/* {
+       step===5&& yourForm.submit()
+     }   */}
+
+     {step==1&&
       <div className="row my-sm-4" style={{marginTop:'25px'}}>
           <div className="d-flex col-md-12 align-items-center justify-content-center">
             <button className="btn btn-success" value="Start" form="json-form" style={{height:'45px', width:'350px'}} >Continue</button>
@@ -245,7 +266,7 @@ const Tpl = (props)=> {
                 </div>
 
               <div className="my-xs-4 my-xl-4  d-flex col-md-6 align-items-center justify-content-center">
-                <button className="btn btn-success" value="Start" type="submit" form="json-form" style={{height:'45px', width:'350px'}} >Continue</button>
+                <button className="btn btn-success" value="Start" form="json-form" style={{height:'45px', width:'350px'}} >Continue</button>
               </div>
           </div>
     }

@@ -85,7 +85,7 @@
           // "type": "object, boolean",
           "type": "object",
           "required": [
-                //  "choose_details",
+                 "choose_details",
               // "year",
               // "make",
               // "model",
@@ -123,16 +123,18 @@
                         "model": {
                           "type": "string"
                         },
-                        // "required": [
-                        //   "choose_details",
-                        // ],
+                        "required": [
+                          "year",
+                          "make",
+                          "model"
+                        ],
                       }
                     },
               
                     {
                       "properties": {
                         "choose_details": {
-                          // "type": "object,boolean",
+                          // "type": "string",
                           "enum": [
                             "VIN"
                           ],
@@ -144,9 +146,9 @@
                           "type": "string"
                         }
                       },
-                      // "required": [
-                      //   "choose_details",
-                      // ]
+                      "required": [
+                        "VIN",
+                      ]
                     },
 
                     // "required": [
@@ -154,9 +156,9 @@
                     // ],
               
                   ],
-                  "required": [
-                    "choose_details",
-                  ],
+                  // "required": [
+                  //   "choose_details",
+                  // ],
                 }
               },
           
@@ -170,10 +172,20 @@
       //     { "value": "a", "name": "A" }
       //   ],    
               // "type": "boolean",
-              "type":"string",
+              // "type":"string",
+              allOf: [
+                {
+                  type: ["string", "boolean"]
+                },
+                {
+                  type: "boolean"
+                },
+              ],
               "enum": [
-                "Year/Make/Model",
-                "VIN",
+                // "Year/Make/Model",
+                // "VIN",
+                "1",
+                "2",
                   // true,
                   // false
               ],
@@ -181,22 +193,12 @@
               "Year/Make/Model",
               "VIN"
                ],
-              "default": "Year/Make/Model",
+              "default": "1",
               // "title": "radio buttons",
               // "description": "This is the radio-description"
               },
   
-        // "year": {
-        //           "type": "number",
-        //           // "type": "string",
-        //           //  'format': 'date',
-        // },
-        // "make": {
-        //   "type": "string"
-        // },
-        // "model": {
-        //   "type": "string"
-        // },
+ 
         "style": {
           "type": "string"
         },

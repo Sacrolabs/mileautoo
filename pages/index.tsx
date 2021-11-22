@@ -10,6 +10,7 @@ import MultiForm from "../components/Form/MultiFrom"
 import Script from 'next/script'
 
 import Slider from 'react-slick'
+import MultiFormDemo from '../components/Form/MultiFormDemo'
 
 const Home = ()=> {
 
@@ -770,6 +771,7 @@ const Home = ()=> {
                 <h2>How much can I save with Mile Auto?</h2>
 
                 {/* <MultiForm/> */}
+                {/* <MultiFormDemo/> */}
                 <IndexForm/>
 
 {/* 

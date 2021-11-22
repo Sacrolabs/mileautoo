@@ -63,7 +63,8 @@ const Quote = ()=> {
     </section>
      
       {/* <Script src="./assets/js/quote.js"></Script> */}
-      <Script src="./assets/js/quotetest.js"></Script>
+      
+      {/* <Script src="./assets/js/quotetest.js"></Script> */}
         </>
     )
 }
