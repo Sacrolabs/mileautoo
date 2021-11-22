@@ -12,10 +12,8 @@ import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
             <div className="d-flex col-md-6">
               <PurchaseForm/>
             </div>
-
+ 
       
-
-
 
             <div className="row mt-md-4" style={{}}>
 			
