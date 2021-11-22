@@ -18,7 +18,7 @@ const mySchema = {
 		],
 		"properties": {
 			"zip_code": {
-                "type": "number"
+                "type": "string"
               },
               "miles_year":{
                 "type": "string",
