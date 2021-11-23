@@ -80,180 +80,7 @@
         
   
         
-        const vehicleSchema = {
-          title: "Your Vehicle",
-          // "type": "object, boolean",
-          "type": "object",
-          "required": [
-                 "choose_details",
-              // "year",
-              // "make",
-              // "model",
-              // "prior_damage",
-              // "lease_own_finance",
-              // // "length_of_ownership",
-              // "purpose",
-              // "annual_mileage"
-              ],
-  
-              "dependencies": {
-                "choose_details": {
-                  // "type": "object,boolean",
-                  "oneOf": [
-                    
-                    {
-                      "properties": {
-                        "choose_details": {
-                          // "type": "object,boolean",
-                          "enum": [
-                            "Year/Make/Model"
-                          ] ,
-                          // "enumNames": [
-                          //   "Year/Make/Model"
-                          // ]
-                        },
-                        "year": {
-                          "type": "number",
-                          // "type": "string",
-                          //  'format': 'date',
-                        },
-                        "make": {
-                          "type": "string"
-                        },
-                        "model": {
-                          "type": "string"
-                        },
-                        "required": [
-                          "year",
-                          "make",
-                          "model"
-                        ],
-                      }
-                    },
-              
-                    {
-                      "properties": {
-                        "choose_details": {
-                          // "type": "string",
-                          "enum": [
-                            "VIN"
-                          ],
-                          // "enumNames": [
-                          //   "VIN"
-                          // ]
-                        },
-                        "VIN": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "VIN",
-                      ]
-                    },
-
-                    // "required": [
-                    //   "choose_details",
-                    // ],
-              
-                  ],
-                  // "required": [
-                  //   "choose_details",
-                  // ],
-                }
-              },
-          
-          "properties": {
-              
-              "choose_details": {
-         
-      //   "titleMap": [
-      //     { "value": "c", "name": "C" },
-      //     { "value": "b", "name": "B" },
-      //     { "value": "a", "name": "A" }
-      //   ],    
-              // "type": "boolean",
-              // "type":"string",
-              allOf: [
-                {
-                  type: ["string", "boolean"]
-                },
-                {
-                  type: "boolean"
-                },
-              ],
-              "enum": [
-                // "Year/Make/Model",
-                // "VIN",
-                "1",
-                "2",
-                  // true,
-                  // false
-              ],
-              "enumNames": [
-              "Year/Make/Model",
-              "VIN"
-               ],
-              "default": "1",
-              // "title": "radio buttons",
-              // "description": "This is the radio-description"
-              },
-  
- 
-        "style": {
-          "type": "string"
-        },
-        "prior_damage": {
-          "type": "string",
-          "enum": [
-            "Yes",
-            "No"
-          ],
-        },
-        "lease_own_finance": {
-          "type": "string",
-          "enum": [
-          "Leased",
-          "Financed",
-          "Owned"
-          ]
-        },
-        // "length_of_ownership": {
-        //   "type": "string",
-        //   "enum": [
-        // 	"Less than 1 Year",
-        // 	"1 - 2 Years",
-        // 	"3 - 4 Years",
-        // 	"5 or More Years"
-        //   ]
-        // },
-        "purpose": {
-          "type": "string",
-          "enum": [
-                  "one", "two", "three",
-          
-          ],
-                "enumNames": [
-            "Personal",
-                    "Business",
-        ],
-        },
-        "annual_mileage": {
-          "type": "number"
-        },
-        // "vin": {
-        //   "type": "string"
-        // },
-              "choose_option_tag": {
-          "type": "string"
-        }
-        },
-        
-      
-      
-  
-        }
-  
-  
+       
   
    const driverSchema = {
     title: "Your Drivers",
@@ -869,6 +696,189 @@
         
         }
 
+
+
+        const vehicleSchema = {
+          title: "Your Vehicle",
+         
+          "type": "object",
+
+          "required": [
+                 "choose_details",
+              
+              ],
+  
+              // "dependencies": {
+                
+              //   "choose_details": {
+              //     "type": "object",
+                      
+              //           "anyOf": [
+
+              //         {
+              //           "choose_details": {
+              //             "enum": [
+              //               "Year/Make/Model"
+              //             ] ,
+                         
+              //           },
+              //           "properties":{
+              //           "year": {
+              //             "type": "number",
+              //           },
+              //           "make": {
+              //             "type": "string"
+              //           },
+              //           "model": {
+              //             "type": "string"
+              //           },
+              //           },
+
+              //         },
+
+              //         {
+              //           "choose_details": {
+              //             "enum": [
+              //               "VIN"
+              //             ] ,
+                         
+              //           },
+              //          "properties":{
+              //           "VIN": {
+              //             "type": "string"
+              //           },
+              //          },
+                       
+                       
+              //         }
+              //         ]
+                      
+                      
+              //         }
+              
+              //   },
+
+             
+          
+          "properties": {
+              
+              "choose_details": {
+              "type": "string",
+              "enum": [
+                "Year/Make/Model",
+                "VIN",
+              ],
+              // "enumNames": [
+              // "Year/Make/Model",
+              // "VIN"
+              //  ],
+              // "default": "Year/Make/Model",
+              },
+
+              "dependencies":{
+                "choose_details":{
+                  "oneOf":[
+
+
+                    {
+                      "properties":{
+                        "choose_details":{
+                          "enum":[
+                            "Year/Make/Model"
+                          ]
+                        },
+
+                        "year": {
+                          "type": "number",
+                        },
+                        "make": {
+                          "type": "string"
+                        },
+                        "model": {
+                          "type": "string"
+                        },
+
+                        "required":[
+                          "year",
+                          "make",
+                          "model"
+                        ],
+                      }
+                    },
+
+
+                    {
+
+                      "properties":{
+                        "choose_details":{
+                          "enum":[
+                            "VIN"
+                          ]
+                        },
+
+                       
+                        "VIN": {
+                          "type": "string"
+                        },
+                       
+                        "required":[
+                          "VIN",
+                        ],
+                      }
+
+                    },
+
+
+                  ]
+                }
+              },
+
+      
+  
+ 
+        "style": {
+          "type": "string"
+        },
+        "prior_damage": {
+          "type": "string",
+          "enum": [
+            "Yes",
+            "No"
+          ],
+        },
+        "lease_own_finance": {
+          "type": "string",
+          "enum": [
+          "Leased",
+          "Financed",
+          "Owned"
+          ]
+        },
+       
+        "purpose": {
+          "type": "string",
+          "enum": [
+                  "one", "two", "three",
+          
+          ],
+                "enumNames": [
+            "Personal",
+                    "Business",
+        ],
+        },
+        "annual_mileage": {
+          "type": "number"
+        },
+              "choose_option_tag": {
+          "type": "string"
+        }
+        },
+        }
+  
+  
+        
+
+
   const vehicleUiSchema= {
           
             'ui:field': 'layout_grid',
@@ -923,15 +933,20 @@
               
               
             "choose_details": {
+              "ui:placeholder": "choose one",
                 "ui:options": {
                     "label": false,
-                    "inline": true,
-            },
-              "ui:widget": "radio", // could also be "select"
+                    // "inline": true,
+                },
+              // "ui:widget": "radio", // could also be "select"
+              "ui:widget": "select",
               // "classNames": "form-check form-check-inline ",
-              "classNames": "radio-selection vehicle-details",
+
+              // "classNames": "radio-selection vehicle-details",
+              
               //  "classNames": "",
               },
+
              "year": {
             "ui:placeholder": "Year",
             "ui:options": {

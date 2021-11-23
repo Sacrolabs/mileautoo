@@ -34,7 +34,7 @@ const Tpl = (props)=> {
 	const {id, label, required, children} = props;
     
 	// console.log("Element Id:",id)
-	// console.log("Props:",props)
+	console.log("Props:",props)
 
 	// console.log("Childern:",children)
 
@@ -45,12 +45,14 @@ const Tpl = (props)=> {
   
 	  <div className="form-group">
       {
-        id=="rjsf_prefix"&&<h4  className="frmhead">{props.schema.title}</h4>
+        // id=="rjsf_prefix"&&<h4  className="frmhead">{props.schema.title}</h4>
+        id=="root"&&<h4  className="frmhead">{props.schema.title}</h4>
       }
 
 		  {
 			props.uiSchema.class=="mileauto-custom-select" && 
-        <select className="dropdwn">
+        <select className="dropdwn" id={props.children[0].props.idSchema.$id}>
+         {/* <select className="dropdwn"> */}
           <option className="customselect" value="">{placehold}</option>  
           {
           selectItem.map((item, i)=>
@@ -82,9 +84,9 @@ const Tpl = (props)=> {
 
   //  let yourForm
 
-    const onSubmit = ({formData}, e) => {
+    const onSubmit = ({formData}) => {
       
-      e.preventDefault()
+      // e.preventDefault()
 
       switch(step){
         case 1 :
@@ -95,9 +97,9 @@ const Tpl = (props)=> {
           //   ...formData
           // })
           
-          // console.log("on step 1",formData)
-          // console.log("Number of keys in formdata of step 1:",Object.keys(formData).length)
-
+          setFormData(formData)
+          console.log("on step 1",formData)
+          console.log("Number of keys in formdata of step 1:",Object.keys(formData).length)
           break;
 
         case 2 :
@@ -107,8 +109,9 @@ const Tpl = (props)=> {
           //   ...customerFormData, 
           //   ...formData
           // })
-          // console.log("on step 2",formData)
-          // console.log("Number of keys in formdata of step 2:",Object.keys(formData).length)
+          setFormData(formData)
+          console.log("on step 2",formData)
+          console.log("Number of keys in formdata of step 2:",Object.keys(formData).length)
           break;
 
           case 3 :
@@ -119,8 +122,10 @@ const Tpl = (props)=> {
             //   ...customerFormData, 
             //   ...formData
             // })
-            // console.log("on step 3",formData)
-            // console.log("Number of keys in formdata of step 3:",Object.keys(formData).length)
+            
+            setFormData(formData)
+            console.log("on step 3",formData)
+            console.log("Number of keys in formdata of step 3:",Object.keys(formData).length)
             break;
 
             case 4 :
@@ -132,8 +137,9 @@ const Tpl = (props)=> {
               //   ...customerFormData, 
               //   ...formData
               // })
-              // console.log("on step 4",formData)
-              // console.log("Number of keys in formdata of step 4:",Object.keys(formData).length)
+              setFormData(formData)
+              console.log("on step 4",formData)
+              console.log("Number of keys in formdata of step 4:",Object.keys(formData).length)
               break;
 
               case 5 :
@@ -147,7 +153,7 @@ const Tpl = (props)=> {
               //   ...formData
               // })
               console.log("on step 5",formData)
-              // console.log("Number of keys in formdata of step 5:",Object.keys(formData).length)
+              console.log("Number of keys in formdata of step 5:",Object.keys(formData).length)
               // break;
 
               // setFormData(formData)
@@ -161,14 +167,14 @@ const Tpl = (props)=> {
               //   })
               //   console.log("on step 5",formData)
               //   break;
-
+              setFormData(formData)
               
 
         default:
           alert("You submitted " + JSON.stringify(formData))
           console.log("whole data object:",formData)
           // console.log("whole data object:",JSON.stringify(formData, null, 2))
-          // console.log("Number of keys in total formData:",Object.keys(formData).length)
+          console.log("Number of keys in total formData:",Object.keys(formData).length)
       }
 
         
@@ -222,7 +228,8 @@ const Tpl = (props)=> {
                 //       }
                 // formData={purchaseFormData}
                 // onChange={onChangeForm}
-                idPrefix={"rjsf_prefix"}
+                // idPrefix={"rjsf_prefix"}
+                onChange={e => e.formData}
 
                 // onChange={({formData}) => {
                 //   setFormData(formData)
