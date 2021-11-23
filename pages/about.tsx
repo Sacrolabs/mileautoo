@@ -3,6 +3,7 @@ import AboutForm from '../components/Form/AboutForm'
 import MultiFormDemo from '../components/Form/MultiFormDemo'
 
 import Script from 'next/script'
+import TestForm from '../components/Form/TestForm'
 
 const About = ()=> {
     return (
@@ -24,6 +25,12 @@ const About = ()=> {
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="./assets/css/about.css"/>
+
+
+    {/* <div className="home-form">
+     <TestForm/>
+
+    </div> */}
 
     <section className="hero">
         <div className="wrapper">

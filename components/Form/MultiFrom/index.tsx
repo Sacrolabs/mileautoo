@@ -29,47 +29,63 @@ import * as Schema from '../Schema'
     }
 
    
-const Tpl = (props)=> {
+// const Tpl = (props)=> {
 
-	const {id, label, required, children} = props;
+// 	const {id, label, required, children} = props;
     
-	// console.log("Element Id:",id)
-	console.log("Props:",props)
+// 	// console.log("Element Id:",id)
+// 	console.log("Props:",props)
 
-	// console.log("Childern:",children)
+// 	// console.log("Childern:",children)
 
-	const selectItem = props.children[0].props.schema.enum
+// 	const selectItem = props.children[0].props.schema.enum
 
-	const placehold = props.children[0].props.uiSchema["ui:placeholder"]
-	return (
+// 	const placehold = props.children[0].props.uiSchema["ui:placeholder"]
+// 	return (
   
-	  <div className="form-group">
-      {
-        // id=="rjsf_prefix"&&<h4  className="frmhead">{props.schema.title}</h4>
-        id=="root"&&<h4  className="frmhead">{props.schema.title}</h4>
-      }
+// 	  <div className="form-group">
+//       {
+//         // id=="rjsf_prefix"&&<h4  className="frmhead">{props.schema.title}</h4>
+//         id=="root"&&<h4  className="frmhead">{props.schema.title}</h4>
+//       }
 
-		  {
-			props.uiSchema.class=="mileauto-custom-select" && 
-        <select className="dropdwn" id={props.children[0].props.idSchema.$id}>
-         {/* <select className="dropdwn"> */}
-          <option className="customselect" value="">{placehold}</option>  
-          {
-          selectItem.map((item, i)=>
+// 		  {
+// 			props.uiSchema.class=="mileauto-custom-select" && 
+//         <select name={props.children[0].props.name} className="dropdwn" id={props.children[0].props.idSchema.$id}>
+//          {/* <select className="dropdwn"> */}
+//           <option className="customselect" value="">{placehold}</option>  
+//           {
+//           selectItem.map((item, i)=>
           
-            <option key={i} value={item}>
-                      {item}
-            </option>
-          )
-          }
-        </select> 
-		  }
+//             <option key={i} value={item}>
+//                       {item}
+//             </option>
+//           )
+//           }
+//         </select> 
+// 		  }
       
-		{	props.uiSchema.class!=="mileauto-custom-select"&& children}
-	  </div>
+// 		{	props.uiSchema.class!=="mileauto-custom-select"&& children}
+// 	  </div>
     
-	)
-  }
+// 	)
+//   }
+
+
+const Tpl = (props)=> {
+  return (
+  
+    	  <div className="">
+           {
+             
+             props.id=="root"&&<h4  className="frmhead">{props.schema.title}</h4>
+           }
+           {
+             props.children
+           }
+    </div>
+  )    
+}
 
    const handleBack = () => {
     setStep(step-1)

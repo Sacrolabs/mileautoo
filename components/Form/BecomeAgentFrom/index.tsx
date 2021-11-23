@@ -15,14 +15,14 @@ const mySchema = {
 		"": {
 		"type": "object",
 		"required": [
-		  "first_name",
-		  "last_name",
-		  "email",
-		  "agency_name",
-		  "mobile_phone_number",
-		  "state",
-		  "hear_about",
-		  "comparative_rate",
+		//   "first_name",
+		//   "last_name",
+		//   "email",
+		//   "agency_name",
+		//   "mobile_phone_number",
+		//   "state",
+		//   "hear_about",
+		//   "comparative_rate",
 	    
 		],
 		
@@ -293,17 +293,20 @@ const uiSchema = {
 
 const BecomeAgentForm = ()=> {
  
-	const [formData, setFormData] = useState({ email: '' })
+	const [formData, setFormData] = useState(null)
 //    const onSubmit = ({formData},e) =>{ e.preventDefault(); console.log("Data submitted: ",  formData)}	
-	const handleChange = (newData) => {
-		// newData is a copy of the object formData with properties (and nested properties)
-		// updated using immutability pattern for each change occured in the form.
-		setFormData(newData);
-	}
+	// const handleChange = (newData) => {
+	// 	// newData is a copy of the object formData with properties (and nested properties)
+	// 	// updated using immutability pattern for each change occured in the form.
+	// 	setFormData(newData);
+	// }
 
-	const handleSubmit = () => {
+	const onSubmit = ({formData}, e) => {
+        e.preventDefault()
 		// const { doWhateverYouWant } = props;
 		// doWhateverYouWant(formData); // Do whatever you want with the form data
+        setFormData(formData)
+		alert(formData)
 	}
 
     return (
@@ -311,23 +314,24 @@ const BecomeAgentForm = ()=> {
 		{/* <div className="col-md-offset-3 col-md-6">	 */}
 		{/* <div> */}
             <Form 
+			 id="json-form"
 			// <ThemedForm
-			data={formData}
+			// data={formData}
             schema={mySchema}
             uiSchema={uiSchema}
 			FieldTemplate={Tpl}
 			className= 'px-md-0 py-md-0'
-			style={{backgroundColor:"red",}}
+			// style={{backgroundColor:"red",}}
 			fields={fields}
-			onSubmit={handleSubmit}
-			onChange={handleChange}
-			liveValidate
+			onSubmit={onSubmit}
+			onChange={e => e.formData}
+			// liveValidate
             >
 				
 			
 
 			<div className="d-flex align-items-center justify-content-center mt-md-4">
-			<button  style={{height:'45px', width:'350px'}}  className="btn btn-success" type="submit">Submit</button>
+			<button  style={{height:'45px', width:'350px'}}  className="btn btn-success" form="json-form"  value="Start">Submit</button>
 			{/* <button type="button">Cancel</button> */}
 			</div>
       

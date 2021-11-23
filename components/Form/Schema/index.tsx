@@ -615,7 +615,7 @@
               label: false
               },
             //   "classNames":"screen input-error mt-md-3 form-select",
-             "classNames":"mt-md-5 ",
+             "classNames":" ",
               
             },
             "mobile_phone_number": {
@@ -704,7 +704,7 @@
           "type": "object",
 
           "required": [
-                 "choose_details",
+                //  "choose_details",
               
               ],
   
@@ -758,6 +758,56 @@
               
               //   },
 
+              "dependencies": {
+                "choose_details": {
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "choose_details": {
+                          "enum": [
+                            "Year/Make/Model"
+                          ]
+                        },
+                        "year": {
+                          "type": "number",
+                          // "type": "string",
+                          //  'format': 'date',
+                        },
+                        "make": {
+                          "type": "string"
+                        },
+                        "model": {
+                          "type": "string"
+                        },
+                      //   "required": [
+                      // //  "year",
+                      // //  "make",
+                      // //  "model",
+                      //   ],
+                      }
+                    },
+  
+                    {
+                      "properties": {
+                        "choose_details": {
+                          "enum": [
+                            "VIN"
+                          ]
+                        },
+                        "VIN": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        // "VIN"
+                      ]
+                    },
+  
+                  ]
+                }
+              },
+  
+
              
           
           "properties": {
@@ -775,63 +825,63 @@
               // "default": "Year/Make/Model",
               },
 
-              "dependencies":{
-                "choose_details":{
-                  "oneOf":[
+              // "dependencies":{
+              //   "choose_details":{
+              //     "oneOf":[
 
 
-                    {
-                      "properties":{
-                        "choose_details":{
-                          "enum":[
-                            "Year/Make/Model"
-                          ]
-                        },
+              //       {
+              //         "properties":{
+              //           "choose_details":{
+              //             "enum":[
+              //               "Year/Make/Model"
+              //             ]
+              //           },
 
-                        "year": {
-                          "type": "number",
-                        },
-                        "make": {
-                          "type": "string"
-                        },
-                        "model": {
-                          "type": "string"
-                        },
+              //           "year": {
+              //             "type": "number",
+              //           },
+              //           "make": {
+              //             "type": "string"
+              //           },
+              //           "model": {
+              //             "type": "string"
+              //           },
 
-                        "required":[
-                          "year",
-                          "make",
-                          "model"
-                        ],
-                      }
-                    },
+              //           "required":[
+              //             "year",
+              //             "make",
+              //             "model"
+              //           ],
+              //         }
+              //       },
 
 
-                    {
+              //       {
 
-                      "properties":{
-                        "choose_details":{
-                          "enum":[
-                            "VIN"
-                          ]
-                        },
+              //         "properties":{
+              //           "choose_details":{
+              //             "enum":[
+              //               "VIN"
+              //             ]
+              //           },
 
                        
-                        "VIN": {
-                          "type": "string"
-                        },
+              //           "VIN": {
+              //             "type": "string"
+              //           },
                        
-                        "required":[
-                          "VIN",
-                        ],
-                      }
+              //           "required":[
+              //             "VIN",
+              //           ],
+              //         }
 
-                    },
+              //       },
 
 
-                  ]
-                }
-              },
+              //     ]
+              //   }
+              // },
 
       
   
