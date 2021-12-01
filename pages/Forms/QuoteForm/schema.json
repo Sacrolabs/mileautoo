@@ -1,0 +1,317 @@
+{
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Please enter your first name"
+    },
+    "lastName": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Please enter your last name"
+    },
+    "streetAddress": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Please enter your street address"
+    },
+    "zipCode": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Please enter your zip code"
+    },
+    "city": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Please enter your city"
+    },
+    "mobile": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Please enter your mobile number(000-000-0000)"
+    },
+    "preferredContact": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Please enter your Preferred Contact number(000-000-0000)"
+    },
+    "vegetarian": {
+      "type": "boolean"
+    },
+    "birthDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Please enter your birth date."
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "DE",
+        "IT",
+        "JP",
+        "US",
+        "RU",
+        "Other"
+      ]
+    },
+    "how's your credit?": {
+      "type": "string",
+      "enum": [
+        "DE",
+        "IT",
+        "JP",
+        "US",
+        "RU",
+        "Other"
+      ]
+    },
+    "how did you hear about mile auto": {
+      "type": "string",
+      "enum": [
+        "DE",
+        "IT",
+        "JP",
+        "US",
+        "RU",
+        "Other"
+      ]
+    },
+    "provideAddress": {
+      "type": "boolean"
+    },
+    "yourVehicle": {
+      "type": "object",
+      "properties": {
+        "year": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT",
+            "JP",
+            "US",
+            "RU",
+            "Other"
+          ]
+        },
+        "make": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT",
+            "JP",
+            "US",
+            "RU",
+            "Other"
+          ]
+        },
+        "style": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT",
+            "JP",
+            "US",
+            "RU",
+            "Other"
+          ]
+        },
+        "model": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT",
+            "JP",
+            "US",
+            "RU",
+            "Other"
+          ]
+        },
+        "does this vehicle have existing damage": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT",
+            "JP",
+            "US",
+            "RU",
+            "Other"
+          ]
+        },
+        "is your vehicle owned, leased, or financed": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT",
+            "JP",
+            "US",
+            "RU",
+            "Other"
+          ]
+        },
+        "what is your vehicle primary use": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT",
+            "JP",
+            "US",
+            "RU",
+            "Other"
+          ]
+        },
+        "how many miles do you drive annualy": {
+          "type": "string"
+        }
+      }
+    },
+    "yourDrivers": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "minLength": 3,
+          "description": "Please enter your first name"
+        },
+        "lastName": {
+          "type": "string",
+          "minLength": 3,
+          "description": "Please enter your last name"
+        },
+        "email": {
+          "type": "string",
+          "minLength": 3,
+          "description": "Please enter your email"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "marital status": {
+          "type": "string"
+        },
+        "do you own or rent your home": {
+          "type": "string",
+          "enum": [
+            "own",
+            "rent"
+          ]
+        },
+        "level of education": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        },
+        "do you currently have auto insurance": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        },
+        "any at fault accidents or convictions": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        },
+        "would you like to add another driver to this policy": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        }
+      }
+    },
+    "yourCoverage": {
+      "type": "object",
+      "properties": {
+        "bodily injury": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        },
+        "uninsured motorist coverage": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        },
+        "under insured motorist coverage": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        },
+        "comprehensive deductible": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        },
+        "collision deductible": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        },
+        "medical payments coverage": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        },
+        "rental reimbursement limit": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        },
+        "policy effective date": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        }
+      }
+    },
+    "purchase": {
+      "type": "object",
+      "properties": {
+        "license state": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        },
+        "license status": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        },
+        "license number": {
+          "type": "string",
+          "enum": [
+            "DE",
+            "IT"
+          ]
+        }
+      }
+    }
+  }
+}
