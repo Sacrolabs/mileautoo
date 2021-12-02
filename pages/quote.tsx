@@ -10,29 +10,18 @@ import {
 } from '@jsonforms/material-renderers';
 import schema from '../pages/Forms/QuoteForm/schema.json';
 import uischema from '../pages/Forms/QuoteForm/uischema.json';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles"
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#1F8C4E",
-      dark: "#1F8C4E",
-      light: "#1F8C4E"
-    },
-    secondary: {
-      main: "#1F8C4E",
-      dark: "#1F8C4E",
-      light: "#1F8C4E"
-    },
-  },
-});
+const palette = {
+  primary: { main: "#1F8C4E", contrastText: "#FFFFFF" },
+  secondary: { main: "#FFFFFF", contrastText: "#1F8C4E" }
+}
+const theme = createMuiTheme({ palette })
 
 const Quote = () => {
   const [data, setData] = useState({});
-  console.log("current form data =>",data)
-  // if ('vegetarianOptions' in data){
-  //   alert(JSON.stringify(data))
-  // }
+  console.log("current form data =>",data);
+
   return (
     <>
       <meta charSet="UTF-8"/>
@@ -64,7 +53,7 @@ const Quote = () => {
               <div className="form-group">
                   {/* <h4>Your Information</h4> */}
               </div>
-              <ThemeProvider theme={theme}>
+              <MuiThemeProvider theme={theme}>
                 <JsonForms
                   schema={schema}
                   uischema={uischema}
@@ -72,9 +61,8 @@ const Quote = () => {
                   renderers={materialRenderers}
                   cells={materialCells}
                   onChange={({ data }) => {setData(data)}}
-                  // onSubmit={}
                 />
-              </ThemeProvider>
+              </MuiThemeProvider>
               {/* <MultiForm/> */}
             </div>
         </section>
