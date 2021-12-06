@@ -217,8 +217,8 @@ header .burger {
     font-family: var(--font-main);
     height: 50px;
     width: 100%;
-    border-radius: 7px;
-    border: 2px solid #eaeaea;
+    /* border-radius: 7px; */
+    /* border: 2px solid #eaeaea; */
     margin-top: 20px;
     padding: 0 25px;
     font-size: 15px;

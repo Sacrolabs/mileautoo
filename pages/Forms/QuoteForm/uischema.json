@@ -1,0 +1,309 @@
+{
+  "type": "Categorization",
+  "elements": [
+    {
+      "type": "Category",
+      "label": "Your Info ",
+      "elements": [
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/firstName"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/lastName"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/streetAddress"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/zipCode"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/city"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/state"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/birthDate"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/mobile"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/preferredContact"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/how's your credit?"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/how did you hear about mile auto"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Category",
+      "label": "Your Vehicle",
+      "elements": [
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourVehicle/properties/year"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourVehicle/properties/make"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourVehicle/properties/model"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourVehicle/properties/style"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourVehicle/properties/does this vehicle have existing damage"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourVehicle/properties/is your vehicle owned, leased, or financed"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourVehicle/properties/what is your vehicle primary use"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourVehicle/properties/how many miles do you drive annualy"
+            }
+          ]
+        }
+      ],
+      "rule1": {
+        "effect": "SHOW",
+        "condition": {
+        }
+      }
+    },
+    {
+      "type": "Category",
+      "label": "Your Drivers ",
+      "elements": [
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourDrivers/properties/firstName"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourDrivers/properties/lastName"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourDrivers/properties/email"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourDrivers/properties/gender"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourDrivers/properties/marital status"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourDrivers/properties/do you own or rent your home"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourDrivers/properties/level of education"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourDrivers/properties/do you currently have auto insurance"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourDrivers/properties/any at fault accidents or convictions"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourDrivers/properties/would you like to add another driver to this policy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Category",
+      "label": "Your Coverage",
+      "elements": [
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourCoverage/properties/bodily injury"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourCoverage/properties/uninsured motorist coverage"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourCoverage/properties/under insured motorist coverage"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourCoverage/properties/comprehensive deductible"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourCoverage/properties/collision deductible"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourCoverage/properties/medical payments coverage"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/yourCoverage/properties/rental reimbursement limit"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/yourCoverage/properties/policy effective date"
+            }
+          ]
+        }
+      ],
+      "rule1": {
+        "effect": "SHOW",
+        "condition": {
+        }
+      }
+    },
+    {
+      "type": "Category",
+      "label": "Purchase",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/purchase/properties/license state"
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/purchase/properties/license status"
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/purchase/properties/license number",
+          "rule1": {
+            "effect": "SHOW",
+            "condition": {
+            }
+          }
+        }
+      ],
+      "rule1": {
+        "effect": "SHOW",
+        "condition": {
+        }
+      }
+    }
+  ],
+  "options": {
+    "variant": "stepper",
+    "showNavButtons": true
+  }
+}
